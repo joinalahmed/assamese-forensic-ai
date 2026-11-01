@@ -6,8 +6,11 @@ At test time it is used two ways:
   * as the unseen-token model (replacing the char-n-gram nearest-neighbour fallback), and
   * as an extra candidate (with its log-probability) inside the Viterbi decoder of e2_normaliser_plus.py.
 A 2-layer d=192 transformer trains in ~10 min on CPU; set EPOCHS lower to go faster.
+Round 8 flags: NFC=1 applies Unicode NFC to the native side; NODEV=1 drops the first 2,000 training sentences
+(the dev slice used by e2_rerank2.py / e2_discrim.py) from the training pairs, so dev-tuned rerankers see
+leak-free neural scores.
 """
-import sys, os, json, math, time
+import sys, os, json, math, time, unicodedata
 from collections import Counter, defaultdict
 import numpy as np, torch, torch.nn as nn
 from e2_romanisation import load, PATH
@@ -115,8 +118,12 @@ if __name__ == "__main__":
     os.makedirs(OUT, exist_ok=True)
     pairs, _ = load(PATH); rng = np.random.RandomState(SEED)
     idx = rng.permutation(len(pairs)); cut = int(0.8 * len(pairs)); tr, te = [pairs[i] for i in idx[:cut]], [pairs[i] for i in idx[cut:]]
+    if os.environ.get("NFC"):
+        nfc = lambda t: unicodedata.normalize("NFC", t); tr = [(r, [nfc(x) for x in n]) for r, n in tr]; te = [(r, [nfc(x) for x in n]) for r, n in te]; print("NFC-normalised native side", flush=True)
+    tr_fit = tr[2000:] if os.environ.get("NODEV") else tr
+    if os.environ.get("NODEV"): print("NODEV: training on the 80% split minus its first 2,000 (dev) sentences", flush=True)
     reads = defaultdict(Counter)
-    for r, n in tr:
+    for r, n in tr_fit:
         for a, b in zip(r, n): reads[a.lower()][b] += 1
     # one training example per Roman type, weighted by frequency through repetition (capped), target = majority reading
     wp = []
@@ -135,7 +142,7 @@ if __name__ == "__main__":
     print("unseen:", res, flush=True)
 
     # 2) plug into the Viterbi decoder as an extra candidate for every token (lambda from e2_normaliser_plus)
-    dec = V.Decoder().fit(tr); table = {a: c.most_common(1)[0][0] for a, c in dec.reads.items()}
+    dec = V.Decoder().fit(tr_fit); table = {a: c.most_common(1)[0][0] for a, c in dec.reads.items()}
     all_toks = sorted({a.lower() for r, _ in te for a in r}); npred, nlp = predict(model, sv, tv, all_toks); neural = dict(zip(all_toks, predict.alts))
     base_cand = dec.candidates
 
