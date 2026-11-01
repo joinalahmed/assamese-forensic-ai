@@ -123,7 +123,7 @@ class System:
         for c, (em, f) in out.items():
             f.update(tok_seen=float(seen), tok_logcount=math.log1p(tot), neural_top_lp=top, copy=float(c == tok), latin=float(not NATIVE.search(c)), tok_latin_like=float(bool(re.fullmatch(r"[a-z]+", t))),
                      tok_has_digit=float(any(ch.isdigit() for ch in t)), cand_apos=float("'" in c or "\u2019" in c), len_ratio=len(c) / max(tl, 1), log_ncand=math.log(n), tok_len=float(tl), ind_uni=math.log(self.ind.prob((), self.wid(c))), big_uni=math.log(self.big.prob((), self.wid(c))),
-                     big_oov=float(self.wid(c) == -3))
+                     big_oov=float(self.big.c[1].get((self.wid(c),), 0) == 0))  # not in the big LM's own vocabulary (the shared id dict also holds in-domain words, which would leak dev references)
         self.cache[tok] = out; return out
 
     def lm_mats(self, prev, cur):
