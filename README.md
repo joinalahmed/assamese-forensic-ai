@@ -271,6 +271,97 @@ accuracy, and the remaining 5–7 points are annotation-guideline questions (how
 য়/য distinction, টো/তো), not modelling ones. Recommendation for AS-Forensic-Text: fix a normalisation standard
 (NFC; explicit keep-Latin rule) before annotation, and double-annotate a 2k-sentence slice to measure the floor.
 
+## Round 8: E2 discriminative reranker (`e2_discrim.py`)
+
+Round 7 ended with a lattice whose oracle token recall is 96.5% but whose decoder picks the right reading 84.9% of
+the time, scored by a hand-set emission plus λ × bigram LM. This round replaces that score with a trained one:
+every lattice edge (Roman token, candidate, previous word) gets 27 features — direct-model log P(n|r) and raw count,
+char-transformer beam log-prob and rank, copy flag, Aksharantar flag and count, in-domain and big-corpus bigram and
+unigram log-probs, length ratio, Latin-script and apostrophe flags, and the round-7 decoder's own forward–backward
+posterior and 1-best flag — and a classifier trained on the dev lattices (label = candidate equals the reference)
+provides the emission; test sentences are decoded with Viterbi over its log-odds. Protocol as in round 7: same
+80/20 split and seed, dev = first 2,000 training sentences, NFC on the native side everywhere, and *everything* the
+reranker sees on dev is fitted without dev — the word-level decoder, the in-domain bigram, and now also the char
+transformer (`NFC=1 NODEV=1 TAG=_big_nodev_nfc e2_neural.py`, 55 min CPU). Model selection is 2-fold by sentence
+within dev; the selected model is refitted on all 2,000 dev sentences and applied once to the 12,063 test sentences.
+
+**What could not be run here.** The session's network policy denies `huggingface.co` (and the AI4Bharat object
+store and `dumps.wikimedia.org`), so none of the `data/new/download_hf.py` resources were available: **no Aksharantar
+lexicon, no Bhasha-Abhijnaanam external test, no IndicCorp/Sangraha big LM.** The script has all three code paths
+(Aksharantar readings as extra candidates with flag/count features and an oracle-recall-with/without comparison;
+Bhasha-Abhijnaanam decoded with the test-side system; the round-7 113M-token LM via `build_big_lm`) and degrades
+to a documented fallback when the files are absent — the "big" LM below is a 2.0M-token Kneser-Ney bigram from the
+two corpora `get_data.sh` fetches from GitHub (Wikipedia 100k sentences + the 12 MB CC-100 prefix). Re-running
+`e2_discrim.py` on a machine where `download_hf.py` has run fills those columns in; the numbers below are therefore
+the *reranker-only* result, and the Aksharantar and external-test questions remain open.
+
+| System (test, 134,793 tokens, 12,063 sentences) | Token | In-vocab | Unseen (7.0%) | Sentence |
+|---|---|---|---|---|
+| round-7 published (lattice + 113M-token LM + seq2seq 10-best, NFC) | 84.9% | – | – | 28.1% |
+| round-7 lattice reproduced here (2M-token fallback LM, transformer trained without dev) | 84.7% | 87.3% | 50.3% | 27.3% |
+| + logistic-regression reranker (dev 2-fold: 84.5% vs baseline 84.4%) | not run on test | | | |
+| + **gradient-boosted reranker** (dev 2-fold: 84.9%) | **85.3%** | **87.7%** | **53.6%** | **28.3%** |
+
+So the discriminative decoder is worth +0.6 token / +1.0 sentence over the same lattice and +0.4 over the best
+published round-7 number, despite a 50× smaller LM and no sentence-level rescoring. The gain is spread thin:
+in-vocabulary +0.4, unseen +3.3. Permutation importance is dominated by one feature — the round-7 forward–backward
+posterior (0.68 of the log-loss drop) — with the interpolated bigram, neural log-prob, in-domain unigram, copy flag
+and direct-model probability each contributing 0.004–0.006; the classifier is essentially re-calibrating the old
+decoder's posterior with a handful of corrections, which is why logistic regression (a linear re-weighting of the
+same scores) buys almost nothing and the trees buy half a point.
+
+**A leak worth recording.** The first run of this script reported 86.0% on dev and only 85.1% on test, with unseen-
+token accuracy jumping 51 → 64% on dev and not moving on test. The cause was the `big_oov` feature: the word-id
+dictionary shared between the LM and the in-domain decoders is extended with every training-sentence word, so by the
+time the dev lattices were built it also contained the dev *reference* words, and "candidate not in vocabulary"
+quietly became "candidate is not the answer". Defining the flag against the big LM's own counts removed the dev/test
+gap (dev 84.9 / test 85.3). The pattern — a feature computed from a structure that was fitted on the data it is
+evaluated on — is exactly the one the round-7 note about refitting without dev was meant to prevent; it is easy to
+reintroduce through a shared mutable dictionary.
+
+**Error analysis (19,780 test errors; `errors.top20` in the JSON).** 77% of all errors are a hypothesis that is
+itself an attested training reading of the same Roman token — the model chose a reading that some annotator also
+chose. The round-7 inconsistency classes account for: Latin kept vs transliterated **26.1%** (`assam`→অসম vs `assam`,
+`sir`→ছাৰ vs `sir`, `bjp`→বিজেপি vs `bjp`), টো/তো **2.6%** (`tu`), and য়/য after NFC only **0.1%** (NFC already settled
+it). Two further classes became visible once the big ones were named: the apostrophe that marks /o/ (হল vs হ'ল, হব
+vs হ'ব, গল vs গ'ল) **6.3%**, and ি/ী, ু/ূ vowel length **3.1%**. One token alone, the name `dimpu`, produces 949
+errors (4.8% of the total) because the corpus writes it three ways (`dimpu`, ডিম্পু, দিম্পু) and the test split
+happens to prefer the two the training split does not. The 20 most frequent (Roman, reference, hypothesis) triples:
+
+| Roman | Reference | Hypothesis | n | Class |
+|---|---|---|---|---|
+| dimpu | dimpu | দিম্পু | 564 | Latin kept |
+| dimpu | ডিম্পু | দিম্পু | 325 | other (ড/দ) |
+| a | য়ে | এ | 100 | other |
+| hol | হল | হ'ল | 96 | apostrophe |
+| tu | তো | টো | 89 | টো/তো |
+| hoi | হৈ | হয় | 87 | other |
+| assam | অসম | assam | 83 | Latin kept |
+| hobo | হব | হ'ব | 78 | apostrophe |
+| sir | ছাৰ | sir | 77 | Latin kept |
+| koi | কয় | কৈ | 71 | other |
+| bjp | বিজেপি | bjp | 69 | Latin kept |
+| dimpu | দিম্পু | dimpu | 60 | Latin kept |
+| nki | নিকি | নেকি | 59 | other |
+| asa | আছা | আছে | 59 | other |
+| o | ওঁ | ও | 57 | other |
+| gol | গল | গ'ল | 54 | apostrophe |
+| or | ৰ | অ'ৰ | 52 | other |
+| e | য়ে | এ | 51 | other |
+| o | অ | ও | 48 | other |
+| na | নে | না | 48 | other |
+
+Every row is a guideline question, not a modelling one: whether names and English words stay in Latin script,
+whether the /o/ apostrophe is written, ট vs ত in টো/তো, and how the clitics `a`/`e`/`o`/`or` are spelt. The 38% of
+errors in the three named classes plus the apostrophe and vowel-length classes would be removed by a normalisation
+standard, not by a better reranker, which is consistent with the ~90–92% ceiling estimated in round 7.
+
+Outputs: `forensic/results/e2_discrim.json` (oracle recall with/without Aksharantar, dev selection, test, feature
+importances, error table), `e2_discrim.log`, `e2_neural_big_nodev_nfc.{json,log}`. Run order (from `forensic/`):
+`EPOCHS=8 D=256 LAYERS=2 BEAM=5 NFC=1 NODEV=1 TAG=_big_nodev_nfc ../.venv/bin/python e2_neural.py` then
+`../.venv/bin/python e2_discrim.py` (neural beams are cached to `results/e2_discrim_neural.pkl`; `SMOKE=150` runs the
+pipeline on 150 sentences). `e2_neural.py` gained the `NFC` and `NODEV` flags; its default behaviour is unchanged.
+
 ## Choices inferred where the paper was silent
 
 - **Poem corpus parsing:** headers appear in three styles (`কবিতা :: t --- a`, `t -- a`, `t - কবি a`). With a
