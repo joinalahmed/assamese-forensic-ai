@@ -18,6 +18,8 @@ Outputs (`forensic/results/`): `e1.json … e4.json`, figures `e1_tippett.png`, 
 | `forensic/e2_romanisation.py` | spelling variability + lookup normaliser (AssameseBackTranslit) |
 | `forensic/e3_speaker.py` | MFCC → energy VAD → 64-comp GMM-UBM → MAP supervectors → cosine → calibration (call-centre audio) |
 | `forensic/e4_machine_text.py` | ChatGPT vs Wikipedia/CC-100 sentences: in-genre, cross-genre, calibrated |
+| `forensic/e3_backend.py` | round 8: LDA / two-covariance PLDA backends, speaker-bootstrap CIs, robustness, shipped backend artefact |
+| `forensic/score_pair.py` | round 8: forensic comparison report (JSON) for one questioned vs. known recordings; `--demo` |
 
 ## Results vs. the paper
 
@@ -270,6 +272,126 @@ inter-annotator agreement says the same thing. The realistic ceiling on this cor
 accuracy, and the remaining 5–7 points are annotation-guideline questions (how to treat Latin words, the
 য়/য distinction, টো/তো), not modelling ones. Recommendation for AS-Forensic-Text: fix a normalisation standard
 (NFC; explicit keep-Latin rule) before annotation, and double-annotate a 2k-sentence slice to measure the floor.
+
+## Round 8: E3 backend and reporting (`e3_backend.py`, `score_pair.py`)
+
+Three things the earlier rounds left open: a *trained* backend on top of the pretrained encoders, uncertainty on the
+E3 numbers, and the report a forensic practitioner would actually have to produce (paper Sec. 4.6). Same data,
+VAD, segmentation, speaker-disjoint folds (6→4: calls 1–3 train and calibrate, calls 4–5 evaluate; 4→6: swapped),
+S-norm and class-balanced logistic calibration as rounds 2–4. The primary labelling is now the *merged* one from round
+4 (`c400 == c500`, so the 6→4 evaluation fold has 3 speakers and the 4→6 training fold has 3); as-labelled numbers are
+reported alongside. Systems: ERes2Net-base, ERes2Net-v2, CAM++ zh-en and their fusion (concatenated L2-normalised
+embeddings, selected on development speakers as in round 3), each with cosine (round-3 baseline), shrinkage LDA →
+length-norm → cosine, and a two-covariance PLDA (`x = μ + y + ε`, EM, closed-form pair log-LR; written from scratch,
+checked against scipy's Gaussian log-densities), with and without S-norm, 10 s and 3 s segments, 500 speaker
+bootstraps each. Everything runs on CPU in ~9 min once the encoders are downloaded (`bash forensic/get_data.sh`).
+
+**1. Trained backends lose to cosine on this corpus, and in-sample calibration of a trained backend is the worst
+thing one can do.** 10 s segments, merged labelling, EER [95% CI] / Cllr [95% CI], CIs from resampling the
+*evaluation* speakers (calibrator fixed). "held-out cal": calibration scores come from two speaker-disjoint halves
+of the training fold (backend fitted on one half, scored on the other), which needs ≥ 4 training speakers and is
+therefore impossible on the 4→6 fold.
+
+| System | Backend | 6→4 (3 eval speakers) | 4→6 (6 eval speakers) |
+|---|---|---|---|
+| ERes2Net-base | cosine | 3.2% [0.2–7.1] / 0.14 [0.06–0.25] | 2.5% [0.0–11.0] / 0.09 [0.02–0.36] |
+| ERes2Net-base | cosine + S-norm | 2.4% [0.0–6.7] / 0.18 [0.09–0.41] | 3.4% [0.0–10.6] / 0.17 [0.02–0.87] |
+| ERes2Net-base | LDA, in-sample cal | 9.8% [6.2–17.2] / 0.56 [0.34–0.96] | 19.8% [7.1–33.4] / 1.50 [0.44–3.28] |
+| ERes2Net-base | PLDA, in-sample cal | 6.3% [3.9–11.7] / 0.74 [0.39–1.47] | 7.7% [1.5–25.7] / 2.33 [1.75–2.98] |
+| ERes2Net-base | PLDA, held-out cal | 6.3% [3.9–11.7] / 0.43 [0.15–1.22] | n/a |
+| ERes2Net-v2 | cosine | 2.0% [0.0–6.1] / 0.15 [0.07–0.28] | 3.4% [0.3–15.4] / 0.24 [0.02–1.05] |
+| ERes2Net-v2 | cosine + S-norm | 2.0% [0.0–5.8] / 0.21 [0.07–0.33] | 3.1% [0.1–11.2] / 0.20 [0.02–0.89] |
+| ERes2Net-v2 | LDA, in-sample cal | 11.4% [1.6–29.2] / 0.59 [0.07–1.45] | 24.1% [9.3–37.1] / 2.79 [1.25–4.44] |
+| ERes2Net-v2 | PLDA, in-sample cal | 10.4% [1.2–27.1] / 0.93 [0.23–3.50] | 12.1% [3.1–23.4] / 3.33 [2.53–4.55] |
+| ERes2Net-v2 | PLDA, held-out cal | 10.4% [1.2–27.1] / 0.40 [0.10–1.44] | n/a |
+| CAM++ zh-en | cosine | 2.3% [0.0–6.1] / 0.13 [0.04–0.27] | 2.5% [0.0–13.7] / 0.17 [0.01–0.86] |
+| CAM++ zh-en | cosine + S-norm | 2.3% [0.0–5.8] / 0.12 [0.02–0.23] | 1.9% [0.0–8.0] / 0.13 [0.00–0.69] |
+| CAM++ zh-en | LDA, in-sample cal | 5.1% [0.0–11.7] / 0.31 [0.01–0.97] | 14.8% [2.1–39.6] / 1.24 [0.18–4.23] |
+| CAM++ zh-en | PLDA, in-sample cal | 2.7% [0.0–11.4] / 0.47 [0.00–1.33] | 6.8% [1.9–17.8] / 4.41 [3.55–4.95] |
+| CAM++ zh-en | PLDA, held-out cal | 2.7% [0.0–11.4] / 0.15 [0.04–0.47] | n/a |
+| **fusion** | **cosine** (selected) | **2.0% [0.0–6.4] / 0.09 [0.04–0.20]** | **2.5% [0.0–11.9] / 0.12 [0.01–0.54]** |
+| fusion | cosine + S-norm | 1.8% [0.0–5.8] / 0.12 [0.03–0.24] | 2.5% [0.0–7.6] / 0.14 [0.01–0.76] |
+| fusion | LDA, in-sample cal | 7.1% [1.1–18.0] / 0.41 [0.04–1.02] | 19.5% [5.3–39.1] / 1.91 [0.54–4.57] |
+| fusion | PLDA, in-sample cal | 6.3% [0.0–18.8] / 0.64 [0.02–2.69] | 5.3% [0.7–22.7] / 2.53 [1.69–3.42] |
+| fusion | PLDA, held-out cal | 6.3% [0.0–18.8] / 0.30 [0.05–1.19] | n/a |
+
+Every S-normed trained backend with in-sample calibration has Cllr 2–8 (LDA + S-norm at 3 s on the 4→6 fold reaches
+Cllr 94): the training speakers' own scores are near-separable after LDA/PLDA, the cohort statistics are computed on
+the same speakers, and the calibrator fitted to those scores is wildly over-confident on anyone else. Held-out
+calibration repairs Cllr (to 0.15–0.85) but cannot repair discrimination: LDA has 5 dimensions when trained on 6
+speakers and 2 when trained on 3, PLDA's between-speaker covariance has rank 5 or 2, and neither subspace contains
+the evaluation speakers' directions. Cosine on the raw embeddings, which trains nothing, stays at EER 2–3% and
+Cllr 0.09–0.24. The selection of "fusion + cosine" as the shipped system is post hoc (lowest mean-of-folds Cllr among
+the 24 merged 10 s configurations with both folds available) and the 40-system comparison was done on the evaluation
+folds, so its own point estimates are optimistically biased; the full table including S-norm and 3 s variants is in
+`results/e3_backend.json` and `results/e3_backend_ci.png`. As-labelled (c400 ≠ c500) the 6→4 numbers are 9.7% [0.0–36.2]
+/ 0.36 [0.02–2.12] for the same system (round 4's finding again, now with its CI), and 4→6 is unchanged at 2.5% / 0.14.
+
+**2. What the confidence intervals say.** With 3 evaluation speakers the EER interval of the best system is
+0–6.4%; with 6 it is 0–12%. Resampling the *calibration* speakers instead (refit only the calibrator, evaluate on
+the full fold) gives, for the same system, Cllr 0.08–2.54 on 6→4 (median 0.13; calibrator slope 18–2100) and
+0.11–1.07 on 4→6. In other words the point estimate "Cllr 0.09" is one draw from a distribution whose upper tail is
+"worse than reporting LR = 1 for everything", because six speakers' cosine scores are close to linearly separable and
+the logistic fit is then barely determined. S-norm halves the slope spread (2.5–115) without changing Cllr. This is
+the paper's "4–6 speakers give unreliable calibration" claim with a number on it.
+
+**3. Robustness of the shipped system** (fusion + cosine, merged labelling; "mismatched" = backend and calibration
+from clean 10 s speech applied to degraded evaluation audio, which is the casework situation):
+
+| Condition | 6→4 EER [CI] / Cllr [CI] | 4→6 EER [CI] / Cllr [CI] |
+|---|---|---|
+| 3 s speech per segment | 6.2% [2.0–11.0] / 0.27 [0.16–0.43] | 6.3% [1.6–19.7] / 0.29 [0.08–0.94] |
+| 5 s | 3.1% [0.3–8.2] / 0.15 [0.07–0.31] | 4.0% [0.5–14.9] / 0.17 [0.03–0.65] |
+| 10 s | 2.0% [0.0–6.4] / 0.09 [0.04–0.20] | 2.5% [0.0–13.1] / 0.12 [0.01–0.58] |
+| 20 s | 1.4% [0.0–2.6] / 0.04 [0.00–0.10] | 1.7% [0.0–10.8] / 0.05 [0.00–0.27] |
+| telephone band 300–3400 Hz, 10 s, matched | 2.0% [0.0–5.4] / 0.13 [0.07–0.22] | 3.1% [0.0–13.7] / 0.24 [0.03–0.93] |
+| telephone band, mismatched | 2.0% [0.0–5.4] / 0.14 [0.04–0.32] | 3.1% [0.0–13.7] / 0.32 [0.06–1.06] |
+| white noise 10 dB, 10 s, matched | 2.2% [0.0–6.7] / 0.11 [0.04–0.24] | 2.5% [0.0–14.2] / 0.15 [0.01–0.73] |
+| white noise 10 dB, mismatched | 2.2% [0.0–6.7] / 0.41 [0.26–0.58] | 2.5% [0.0–13.6] / 0.36 [0.03–1.90] |
+
+Discrimination is unaffected by band-limiting and noise (as round 4 found for the Mandarin-trained encoders) and
+improves monotonically with duration; *calibration* is not unaffected: a clean-trained calibrator applied to noisy
+evaluation audio triples Cllr (0.11 → 0.41) at the same EER, i.e. the LRs become over-confident even though the
+ranking is intact. For casework this means the calibration set has to match the questioned recording's channel, which
+with 6 speakers one cannot afford to subdivide. Figures: `results/e3_backend_tippett.png` (Tippett plots of the shipped
+system, both folds), `e3_backend_ci.png`, `e3_backend_robustness.png`.
+
+**4. The report.** `score_pair.py questioned.wav known1.wav [known2.wav ...]` loads the shipped backend
+(`results/e3_backend_model.npz`: encoder names and SHA-256, backend parameters, S-norm cohort, calibrator, validation
+figures) and writes a JSON report with the Sec. 4.6 fields: software and model versions with SHA-256 of the encoders,
+backend file, scripts and input files, plus the git commit; per file the sample rate, channels, duration, speech after
+VAD and segment count; the raw score (mean over all questioned × known 10 s segment pairs, with the pair-level spread);
+the calibrated log10 LR with its verbal equivalent on the ENFSI 2015 scale and whether it lies inside the range of LRs
+the validation trials actually produced; the validation set's EER and Cllr with both bootstrap intervals, the
+other fold, the misleading-evidence rates, the robustness table and the selection rule; and a list of limitations
+generated from the artefact (speaker counts, same-session validation, duration, channel, zero-shot Mandarin encoders,
+post-hoc selection, extrapolation beyond the validated LR range). `--demo` runs three cases on the call files:
+
+| Case | raw cosine | log10 LR | verbal (ENFSI) |
+|---|---|---|---|
+| call 4 ch00 vs call 5 ch00 — the repeated agent, the corpus's only cross-call same-speaker pair, neither call in the calibration set | 0.810 | +1.20 | moderate support for same speaker |
+| call 4 ch01 vs call 5 ch01 — the two customers | 0.564 | −2.08 | moderately strong support for different speakers |
+| call 4 ch01 first half vs two files from its second half — same session | 0.847 | +1.71 | moderate support for same speaker |
+
+The cross-call same-speaker pair scores lower (0.81) than the within-session one (0.85) and gets a weaker LR, which is
+the expected direction: all validation same-speaker trials are within one call, so the calibrator has never seen
+session variability. A pooled LR of 10^1.2 for 145 s against 192 s of speech from a speaker the encoders agree is the
+same person is conservative, and that is deliberate (the report says so in `result.note`).
+
+**What the 10-speaker corpus cannot support, stated plainly.**
+- A trained backend. LDA/PLDA need tens of speakers to estimate a speaker subspace; with 3–6 they are worse than
+  doing nothing, and with 3 they cannot even be calibrated on held-out speakers.
+- A calibration whose Cllr one can quote to one decimal place: the calibration-speaker bootstrap spans 0.08–2.5.
+- Any statement about cross-session or cross-channel same-speaker behaviour: there is exactly one cross-call
+  same-speaker pair, and it is the demo, not a validation.
+- LRs beyond about 10^2 in either direction: 919 same-speaker and 1,637 different-speaker validation trials
+  from 3 speakers cannot verify rarer errors than that, and the validated log10 LR range is −0.7…2.9 / −4.0…1.6.
+- Anything about gender, age, dialect or language mismatch: the corpus has no metadata and no other language.
+- The merged labelling itself rests on the encoders' agreement (round 4), not on ground truth.
+
+The remedy is the one the paper proposes and round 5's survey priced: a many-speaker, multi-session Assamese
+corpus (IndicVoices has 850 Assamese speakers but is gated; LDC-IL), at which point the PLDA and the calibration
+bootstrap in `e3_backend.py` can be re-run unchanged.
 
 ## Choices inferred where the paper was silent
 
