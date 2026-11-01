@@ -1,0 +1,906 @@
+{
+ "same agent across calls (call4_ch00 vs call5_ch00; round-4 relabelling, neither call in the calibration set)": {
+  "report_type": "forensic speaker comparison, strength-of-evidence report (likelihood ratio); not a decision",
+  "generated": "2026-11-01T11:49:24",
+  "propositions": {
+   "H1": "the questioned and known recordings were spoken by the same person",
+   "H2": "they were spoken by different people"
+  },
+  "system": {
+   "encoders": [
+    "CAM++ zh-en",
+    "ERes2Net-base",
+    "ERes2Net-v2"
+   ],
+   "encoder_files": {
+    "CAM++ zh-en": "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx",
+    "ERes2Net-base": "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+    "ERes2Net-v2": "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx"
+   },
+   "encoder_sha256": {
+    "CAM++ zh-en": "aa3cfc16963a10586a9393f5035d6d6b57e98d358b347f80c2a30bf4f00ceba2",
+    "ERes2Net-base": "1a331345f04805badbb495c775a6ddffcdd1a732567d5ec8b3d5749e3c7a5e4b",
+    "ERes2Net-v2": "bf1a75b9930474cf3389ef415e6e5d38ca96fea4a3a00f7e301d080a58ee2239"
+   },
+   "encoder_sha256_match_validation": {
+    "CAM++ zh-en": true,
+    "ERes2Net-base": true,
+    "ERes2Net-v2": true
+   },
+   "fusion": "L2-normalised embeddings of the encoders concatenated",
+   "backend": "cosine",
+   "score_normalisation": "none",
+   "calibration": "class-balanced logistic regression on in-sample training-fold trials; log LR = 30.8166 · score + -22.1799 (natural log)",
+   "training_data": "calls 1–3 (6 speakers), segments of 10 s speech after energy VAD",
+   "labelling": "merged (c400 == c500)",
+   "backend_file": "results/e3_backend_model.npz",
+   "backend_sha256": "97ac64130fa1c5049fe71d127c61584245e29c1a0f4398c03dd889db7a2585ce",
+   "backend_created": "2026-11-01",
+   "code_sha256": {
+    "score_pair.py": "fb419e53ef2dfa112c52189ab75e48893a0ee9aa0c7f03988766e87778cedb5e",
+    "e3_backend.py": "460599a9b24aa846e7e0b2aa914162268facb048415c49a2a0ae0736ea94df18",
+    "e3_speaker_plus.py": "919d8e66fbc929863c896d13f836d437500c4b228ad5433e6146555f8f2055bc",
+    "e3_speaker.py": "d876ed3ea8506ca4746bf42dee59ae69df788c659d850bcd0f66e625fbc2e34d",
+    "metrics.py": "f5ec17599b246c779274dff6819668dfd2a629c9d235fa3e89b9abb39c0b5546"
+   },
+   "git_commit": "12f7caa2528b25dadf787be94121f66b68ac0e7d",
+   "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1",
+    "soundfile": "0.14.0",
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39"
+   },
+   "versions_at_validation": {
+    "seed": 0,
+    "n_boot": 500,
+    "folds": "6→4: train/calibrate on calls 1–3, evaluate calls 4–5; 4→6: swapped",
+    "primary_labelling": "merged (c400 == c500, round 4)",
+    "encoders": {
+     "ERes2Net-base": "../models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+     "ERes2Net-v2": "../models/3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx",
+     "CAM++ zh-en": "../models/3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx"
+    },
+    "snorm_topk": 100,
+    "different_trials_cap": 12000,
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1"
+   }
+  },
+  "questioned": {
+   "file": "/home/user/assamese-forensic-ai/forensic/../data/calls/call4_ch00.wav",
+   "sha256": "d3c8c4bd04630ef6767423499b211b4c3c8e8b7b0a763f3eff286259598f9ff6",
+   "sample_rate": 16000,
+   "channels": 1,
+   "duration_s": 450.07,
+   "speech_s_after_vad": 145.18,
+   "n_segments": 14,
+   "segment_seconds": 10,
+   "resampled_to_16k": false,
+   "mixed_to_mono": false
+  },
+  "known": [
+   {
+    "file": "/home/user/assamese-forensic-ai/forensic/../data/calls/call5_ch00.wav",
+    "sha256": "33a7612b21f8a761a9f6cb1129d2e996a0f5fb7cccfc7eeb66cbe7ac775c892c",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 779.96,
+    "speech_s_after_vad": 192.48,
+    "n_segments": 19,
+    "segment_seconds": 10,
+    "resampled_to_16k": false,
+    "mixed_to_mono": false
+   }
+  ],
+  "result": {
+   "status": "ok",
+   "n_segment_pairs": 266,
+   "raw_score": 0.8095760738202946,
+   "raw_score_pooling": "mean over all questioned × known segment-pair scores",
+   "raw_score_segment_pairs": {
+    "median": 0.8129910799671549,
+    "std": 0.04109920763234481,
+    "min": 0.6831761221429413,
+    "max": 0.9021469692421966
+   },
+   "log10_lr": 1.2023241320757485,
+   "lr": 15.933975023577323,
+   "ln_lr": 2.768453623464623,
+   "verbal_equivalent_enfsi": "moderate support for the same-speaker proposition over the different-speaker proposition",
+   "segment_pair_log10_lr": {
+    "median": 1.2480287629583813,
+    "share_supporting_same_speaker": 0.9774436090225563,
+    "min": -0.48934577613435565,
+    "max": 2.4412438949648165
+   },
+   "within_validated_lr_range": true,
+   "validated_log10_lr_range": {
+    "same_speaker_trials": [
+     -0.6508186104293874,
+     2.8764290394544556
+    ],
+    "different_speaker_trials": [
+     -4.0312750625153155,
+     1.6232753339595642
+    ]
+   },
+   "note": "The calibrator was validated on single 10 s segment pairs. Pooling by the mean score reports the LR of a typical segment pair; it does not combine the pairs as independent evidence, which would overstate the LR because segments of one recording share channel and session."
+  },
+  "validation": {
+   "corpus": "InfoBay call_center_audio_dual_channel_as: 5 Assamese call-centre calls, dual channel (agent / customer), 16 kHz, 10 channels = 9 speakers after merging the repeated agent (round 4)",
+   "protocol": "speaker-disjoint folds; backend and calibration fitted on calls 1–3 (6 speakers), evaluated on calls 4–5; same-speaker trials are distinct 10 s segments of one channel of one call (same session, same channel); different-speaker trials are capped at 12,000 random pairs",
+   "fold": "6→4 (calls 4–5, 3 speakers after merging)",
+   "n_calibration_speakers": 6,
+   "n_evaluation_speakers": 3,
+   "n_same_speaker_trials": 919,
+   "n_different_speaker_trials": 1637,
+   "eer": 0.020416736738759496,
+   "eer_ci95_speaker_bootstrap": [
+    0.0,
+    0.06441820511327237
+   ],
+   "cllr": 0.09326594175694601,
+   "cllr_ci95_speaker_bootstrap": [
+    0.03543405178997726,
+    0.20371095152361202
+   ],
+   "cllr_min": 0.06765089006852054,
+   "cllr_ci95_from_resampling_calibration_speakers": [
+    0.08090459784697066,
+    2.5420959677370525
+   ],
+   "misleading_evidence_rate": {
+    "same_speaker_log10lr_below_minus1": 0.0,
+    "different_speaker_log10lr_above_1": 0.00855222968845449
+   },
+   "other_fold_4_to_6": {
+    "n_calibration_speakers": 3,
+    "n_evaluation_speakers": 6,
+    "eer": 0.024631739545507268,
+    "eer_ci95": [
+     0.0,
+     0.11914205197787286
+    ],
+    "cllr": 0.12145046016301847,
+    "cllr_ci95": [
+     0.009671226944126159,
+     0.5400496736901036
+    ]
+   },
+   "n_bootstrap": 500,
+   "system_selection": "min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)",
+   "robustness": {
+    "clean 3 s": {
+     "6→4": {
+      "eer": 0.06223879022535472,
+      "eer_ci95": [
+       0.019781037414965986,
+       0.11039912068491858
+      ],
+      "cllr": 0.2687568598662453
+     },
+     "4→6": {
+      "eer": 0.06298148148148147,
+      "eer_ci95": [
+       0.01644117923367682,
+       0.19721637538801717
+      ],
+      "cllr": 0.2901001916048619
+     }
+    },
+    "clean 5 s": {
+     "6→4": {
+      "eer": 0.03093868665983633,
+      "eer_ci95": [
+       0.0027495555550891304,
+       0.08160554141918472
+      ],
+      "cllr": 0.1482974218646672
+     },
+     "4→6": {
+      "eer": 0.0397006496211829,
+      "eer_ci95": [
+       0.004503887652176936,
+       0.14854795849127841
+      ],
+      "cllr": 0.16920499187519145
+     }
+    },
+    "clean 10 s": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.06441820511327237
+      ],
+      "cllr": 0.09326594175694601
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.1312908538642283
+      ],
+      "cllr": 0.12145046016301847
+     }
+    },
+    "clean 20 s": {
+     "6→4": {
+      "eer": 0.013689675780666367,
+      "eer_ci95": [
+       0.0,
+       0.025647759103641456
+      ],
+      "cllr": 0.03838602158682525
+     },
+     "4→6": {
+      "eer": 0.016715035160174127,
+      "eer_ci95": [
+       0.0,
+       0.1076923076923077
+      ],
+      "cllr": 0.045408846945040854
+     }
+    },
+    "telephone band 300–3400 Hz, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.05396210665268961
+      ],
+      "cllr": 0.13662041226002175
+     },
+     "4→6": {
+      "eer": 0.0309697897056593,
+      "eer_ci95": [
+       0.0,
+       0.136689633666204
+      ],
+      "cllr": 0.31988414035867946
+     }
+    },
+    "white noise 10 dB, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.021877116703436512,
+      "eer_ci95": [
+       0.0,
+       0.06662153242870732
+      ],
+      "cllr": 0.41476499920137483
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.13627289201891768
+      ],
+      "cllr": 0.36157173370395723
+     }
+    }
+   }
+  },
+  "limitations": [
+   "Calibration rests on 6 speakers and validation on 3 speakers (one evaluation fold). The 95% speaker-bootstrap interval for the EER is 0.0%–6.4% and for Cllr 0.04–0.20; the point estimates should not be quoted without them.",
+   "All validation same-speaker trials come from one session and one channel per speaker. The validation therefore does not cover the within-speaker variability of casework (different sessions, handsets, days, health, speaking style), and same-speaker LRs obtained here are expected to be too high for cross-session pairs; the only cross-session same-speaker pair in the corpus (call 4 ch00 vs call 5 ch00) is the --demo case.",
+   "Validated conditions: Assamese call-centre conversational speech, 16 kHz dual-channel recordings, 10 s of speech per segment after energy VAD. EER on fold 6→4 by speech per segment: 3 s: 6.2%, 5 s: 3.1%, 10 s: 2.0%, 20 s: 1.4%. Band-limiting to the telephone band and 10 dB white noise were tested with the clean-trained system applied to degraded evaluation audio (see validation.robustness); other channels, codecs and noise types are untested.",
+   "The speaker encoders were trained on Mandarin corpora (3D-Speaker, CN-Celeb) and used zero-shot on Assamese; no Assamese speaker data was used to train them. Language, dialect, gender and age effects are unmeasured: the corpus has no speaker metadata.",
+   "The system was chosen post hoc among 40 configurations on the evaluation folds themselves (min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)), so its own validation figures are optimistically biased.",
+   "LRs outside the validated range (log10 LR -0.7 to 2.9 for same-speaker and -4.0 to 1.6 for different-speaker validation trials) are extrapolations of the logistic calibrator and have no empirical support.",
+   "The trained backends (LDA, PLDA) were worse than cosine on this corpus because 3–6 training speakers cannot estimate a speaker subspace; the shipped backend is cosine. The remedy is a many-speaker Assamese corpus (IndicVoices, LDC-IL), not a different model.",
+   "No automatic check for recording tampering, overlapping speakers, or non-speech content is performed; the energy VAD is not a speech detector and will pass music or noise bursts."
+  ]
+ },
+ "different speakers (call4_ch01 vs call5_ch01, the two customers)": {
+  "report_type": "forensic speaker comparison, strength-of-evidence report (likelihood ratio); not a decision",
+  "generated": "2026-11-01T11:49:42",
+  "propositions": {
+   "H1": "the questioned and known recordings were spoken by the same person",
+   "H2": "they were spoken by different people"
+  },
+  "system": {
+   "encoders": [
+    "CAM++ zh-en",
+    "ERes2Net-base",
+    "ERes2Net-v2"
+   ],
+   "encoder_files": {
+    "CAM++ zh-en": "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx",
+    "ERes2Net-base": "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+    "ERes2Net-v2": "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx"
+   },
+   "encoder_sha256": {
+    "CAM++ zh-en": "aa3cfc16963a10586a9393f5035d6d6b57e98d358b347f80c2a30bf4f00ceba2",
+    "ERes2Net-base": "1a331345f04805badbb495c775a6ddffcdd1a732567d5ec8b3d5749e3c7a5e4b",
+    "ERes2Net-v2": "bf1a75b9930474cf3389ef415e6e5d38ca96fea4a3a00f7e301d080a58ee2239"
+   },
+   "encoder_sha256_match_validation": {
+    "CAM++ zh-en": true,
+    "ERes2Net-base": true,
+    "ERes2Net-v2": true
+   },
+   "fusion": "L2-normalised embeddings of the encoders concatenated",
+   "backend": "cosine",
+   "score_normalisation": "none",
+   "calibration": "class-balanced logistic regression on in-sample training-fold trials; log LR = 30.8166 · score + -22.1799 (natural log)",
+   "training_data": "calls 1–3 (6 speakers), segments of 10 s speech after energy VAD",
+   "labelling": "merged (c400 == c500)",
+   "backend_file": "results/e3_backend_model.npz",
+   "backend_sha256": "97ac64130fa1c5049fe71d127c61584245e29c1a0f4398c03dd889db7a2585ce",
+   "backend_created": "2026-11-01",
+   "code_sha256": {
+    "score_pair.py": "fb419e53ef2dfa112c52189ab75e48893a0ee9aa0c7f03988766e87778cedb5e",
+    "e3_backend.py": "460599a9b24aa846e7e0b2aa914162268facb048415c49a2a0ae0736ea94df18",
+    "e3_speaker_plus.py": "919d8e66fbc929863c896d13f836d437500c4b228ad5433e6146555f8f2055bc",
+    "e3_speaker.py": "d876ed3ea8506ca4746bf42dee59ae69df788c659d850bcd0f66e625fbc2e34d",
+    "metrics.py": "f5ec17599b246c779274dff6819668dfd2a629c9d235fa3e89b9abb39c0b5546"
+   },
+   "git_commit": "12f7caa2528b25dadf787be94121f66b68ac0e7d",
+   "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1",
+    "soundfile": "0.14.0",
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39"
+   },
+   "versions_at_validation": {
+    "seed": 0,
+    "n_boot": 500,
+    "folds": "6→4: train/calibrate on calls 1–3, evaluate calls 4–5; 4→6: swapped",
+    "primary_labelling": "merged (c400 == c500, round 4)",
+    "encoders": {
+     "ERes2Net-base": "../models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+     "ERes2Net-v2": "../models/3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx",
+     "CAM++ zh-en": "../models/3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx"
+    },
+    "snorm_topk": 100,
+    "different_trials_cap": 12000,
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1"
+   }
+  },
+  "questioned": {
+   "file": "/home/user/assamese-forensic-ai/forensic/../data/calls/call4_ch01.wav",
+   "sha256": "f558b8d0449fc68a00c200434668c756c477f85d6ae0e436dbf35b8b4f46df78",
+   "sample_rate": 16000,
+   "channels": 1,
+   "duration_s": 450.07,
+   "speech_s_after_vad": 142.62,
+   "n_segments": 14,
+   "segment_seconds": 10,
+   "resampled_to_16k": false,
+   "mixed_to_mono": false
+  },
+  "known": [
+   {
+    "file": "/home/user/assamese-forensic-ai/forensic/../data/calls/call5_ch01.wav",
+    "sha256": "9b732ba37b9d97d192fe2f768199377bdc04cf6c54f43cae9a7d4a0dc72fe5c5",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 779.96,
+    "speech_s_after_vad": 254.93,
+    "n_segments": 25,
+    "segment_seconds": 10,
+    "resampled_to_16k": false,
+    "mixed_to_mono": false
+   }
+  ],
+  "result": {
+   "status": "ok",
+   "n_segment_pairs": 350,
+   "raw_score": 0.5640191892938405,
+   "raw_score_pooling": "mean over all questioned × known segment-pair scores",
+   "raw_score_segment_pairs": {
+    "median": 0.5618695481618103,
+    "std": 0.043757012453424296,
+    "min": 0.45267306289048304,
+    "max": 0.7502236781983125
+   },
+   "log10_lr": -2.0840789621878706,
+   "lr": 0.008239882861853402,
+   "ln_lr": -4.798769150956293,
+   "verbal_equivalent_enfsi": "moderately strong support for the different-speaker proposition over the same-speaker proposition",
+   "segment_pair_log10_lr": {
+    "median": -2.1128486188867015,
+    "share_supporting_same_speaker": 0.005714285714285714,
+    "min": -3.5742764577781054,
+    "max": 0.4079831507581309
+   },
+   "within_validated_lr_range": true,
+   "validated_log10_lr_range": {
+    "same_speaker_trials": [
+     -0.6508186104293874,
+     2.8764290394544556
+    ],
+    "different_speaker_trials": [
+     -4.0312750625153155,
+     1.6232753339595642
+    ]
+   },
+   "note": "The calibrator was validated on single 10 s segment pairs. Pooling by the mean score reports the LR of a typical segment pair; it does not combine the pairs as independent evidence, which would overstate the LR because segments of one recording share channel and session."
+  },
+  "validation": {
+   "corpus": "InfoBay call_center_audio_dual_channel_as: 5 Assamese call-centre calls, dual channel (agent / customer), 16 kHz, 10 channels = 9 speakers after merging the repeated agent (round 4)",
+   "protocol": "speaker-disjoint folds; backend and calibration fitted on calls 1–3 (6 speakers), evaluated on calls 4–5; same-speaker trials are distinct 10 s segments of one channel of one call (same session, same channel); different-speaker trials are capped at 12,000 random pairs",
+   "fold": "6→4 (calls 4–5, 3 speakers after merging)",
+   "n_calibration_speakers": 6,
+   "n_evaluation_speakers": 3,
+   "n_same_speaker_trials": 919,
+   "n_different_speaker_trials": 1637,
+   "eer": 0.020416736738759496,
+   "eer_ci95_speaker_bootstrap": [
+    0.0,
+    0.06441820511327237
+   ],
+   "cllr": 0.09326594175694601,
+   "cllr_ci95_speaker_bootstrap": [
+    0.03543405178997726,
+    0.20371095152361202
+   ],
+   "cllr_min": 0.06765089006852054,
+   "cllr_ci95_from_resampling_calibration_speakers": [
+    0.08090459784697066,
+    2.5420959677370525
+   ],
+   "misleading_evidence_rate": {
+    "same_speaker_log10lr_below_minus1": 0.0,
+    "different_speaker_log10lr_above_1": 0.00855222968845449
+   },
+   "other_fold_4_to_6": {
+    "n_calibration_speakers": 3,
+    "n_evaluation_speakers": 6,
+    "eer": 0.024631739545507268,
+    "eer_ci95": [
+     0.0,
+     0.11914205197787286
+    ],
+    "cllr": 0.12145046016301847,
+    "cllr_ci95": [
+     0.009671226944126159,
+     0.5400496736901036
+    ]
+   },
+   "n_bootstrap": 500,
+   "system_selection": "min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)",
+   "robustness": {
+    "clean 3 s": {
+     "6→4": {
+      "eer": 0.06223879022535472,
+      "eer_ci95": [
+       0.019781037414965986,
+       0.11039912068491858
+      ],
+      "cllr": 0.2687568598662453
+     },
+     "4→6": {
+      "eer": 0.06298148148148147,
+      "eer_ci95": [
+       0.01644117923367682,
+       0.19721637538801717
+      ],
+      "cllr": 0.2901001916048619
+     }
+    },
+    "clean 5 s": {
+     "6→4": {
+      "eer": 0.03093868665983633,
+      "eer_ci95": [
+       0.0027495555550891304,
+       0.08160554141918472
+      ],
+      "cllr": 0.1482974218646672
+     },
+     "4→6": {
+      "eer": 0.0397006496211829,
+      "eer_ci95": [
+       0.004503887652176936,
+       0.14854795849127841
+      ],
+      "cllr": 0.16920499187519145
+     }
+    },
+    "clean 10 s": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.06441820511327237
+      ],
+      "cllr": 0.09326594175694601
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.1312908538642283
+      ],
+      "cllr": 0.12145046016301847
+     }
+    },
+    "clean 20 s": {
+     "6→4": {
+      "eer": 0.013689675780666367,
+      "eer_ci95": [
+       0.0,
+       0.025647759103641456
+      ],
+      "cllr": 0.03838602158682525
+     },
+     "4→6": {
+      "eer": 0.016715035160174127,
+      "eer_ci95": [
+       0.0,
+       0.1076923076923077
+      ],
+      "cllr": 0.045408846945040854
+     }
+    },
+    "telephone band 300–3400 Hz, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.05396210665268961
+      ],
+      "cllr": 0.13662041226002175
+     },
+     "4→6": {
+      "eer": 0.0309697897056593,
+      "eer_ci95": [
+       0.0,
+       0.136689633666204
+      ],
+      "cllr": 0.31988414035867946
+     }
+    },
+    "white noise 10 dB, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.021877116703436512,
+      "eer_ci95": [
+       0.0,
+       0.06662153242870732
+      ],
+      "cllr": 0.41476499920137483
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.13627289201891768
+      ],
+      "cllr": 0.36157173370395723
+     }
+    }
+   }
+  },
+  "limitations": [
+   "Calibration rests on 6 speakers and validation on 3 speakers (one evaluation fold). The 95% speaker-bootstrap interval for the EER is 0.0%–6.4% and for Cllr 0.04–0.20; the point estimates should not be quoted without them.",
+   "All validation same-speaker trials come from one session and one channel per speaker. The validation therefore does not cover the within-speaker variability of casework (different sessions, handsets, days, health, speaking style), and same-speaker LRs obtained here are expected to be too high for cross-session pairs; the only cross-session same-speaker pair in the corpus (call 4 ch00 vs call 5 ch00) is the --demo case.",
+   "Validated conditions: Assamese call-centre conversational speech, 16 kHz dual-channel recordings, 10 s of speech per segment after energy VAD. EER on fold 6→4 by speech per segment: 3 s: 6.2%, 5 s: 3.1%, 10 s: 2.0%, 20 s: 1.4%. Band-limiting to the telephone band and 10 dB white noise were tested with the clean-trained system applied to degraded evaluation audio (see validation.robustness); other channels, codecs and noise types are untested.",
+   "The speaker encoders were trained on Mandarin corpora (3D-Speaker, CN-Celeb) and used zero-shot on Assamese; no Assamese speaker data was used to train them. Language, dialect, gender and age effects are unmeasured: the corpus has no speaker metadata.",
+   "The system was chosen post hoc among 40 configurations on the evaluation folds themselves (min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)), so its own validation figures are optimistically biased.",
+   "LRs outside the validated range (log10 LR -0.7 to 2.9 for same-speaker and -4.0 to 1.6 for different-speaker validation trials) are extrapolations of the logistic calibrator and have no empirical support.",
+   "The trained backends (LDA, PLDA) were worse than cosine on this corpus because 3–6 training speakers cannot estimate a speaker subspace; the shipped backend is cosine. The remedy is a many-speaker Assamese corpus (IndicVoices, LDC-IL), not a different model.",
+   "No automatic check for recording tampering, overlapping speakers, or non-speech content is performed; the energy VAD is not a speech detector and will pass music or noise bursts."
+  ]
+ },
+ "same speaker, two known files from one call (call4_ch01 first half vs second half)": {
+  "report_type": "forensic speaker comparison, strength-of-evidence report (likelihood ratio); not a decision",
+  "generated": "2026-11-01T11:49:49",
+  "propositions": {
+   "H1": "the questioned and known recordings were spoken by the same person",
+   "H2": "they were spoken by different people"
+  },
+  "system": {
+   "encoders": [
+    "CAM++ zh-en",
+    "ERes2Net-base",
+    "ERes2Net-v2"
+   ],
+   "encoder_files": {
+    "CAM++ zh-en": "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx",
+    "ERes2Net-base": "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+    "ERes2Net-v2": "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx"
+   },
+   "encoder_sha256": {
+    "CAM++ zh-en": "aa3cfc16963a10586a9393f5035d6d6b57e98d358b347f80c2a30bf4f00ceba2",
+    "ERes2Net-base": "1a331345f04805badbb495c775a6ddffcdd1a732567d5ec8b3d5749e3c7a5e4b",
+    "ERes2Net-v2": "bf1a75b9930474cf3389ef415e6e5d38ca96fea4a3a00f7e301d080a58ee2239"
+   },
+   "encoder_sha256_match_validation": {
+    "CAM++ zh-en": true,
+    "ERes2Net-base": true,
+    "ERes2Net-v2": true
+   },
+   "fusion": "L2-normalised embeddings of the encoders concatenated",
+   "backend": "cosine",
+   "score_normalisation": "none",
+   "calibration": "class-balanced logistic regression on in-sample training-fold trials; log LR = 30.8166 · score + -22.1799 (natural log)",
+   "training_data": "calls 1–3 (6 speakers), segments of 10 s speech after energy VAD",
+   "labelling": "merged (c400 == c500)",
+   "backend_file": "results/e3_backend_model.npz",
+   "backend_sha256": "97ac64130fa1c5049fe71d127c61584245e29c1a0f4398c03dd889db7a2585ce",
+   "backend_created": "2026-11-01",
+   "code_sha256": {
+    "score_pair.py": "fb419e53ef2dfa112c52189ab75e48893a0ee9aa0c7f03988766e87778cedb5e",
+    "e3_backend.py": "460599a9b24aa846e7e0b2aa914162268facb048415c49a2a0ae0736ea94df18",
+    "e3_speaker_plus.py": "919d8e66fbc929863c896d13f836d437500c4b228ad5433e6146555f8f2055bc",
+    "e3_speaker.py": "d876ed3ea8506ca4746bf42dee59ae69df788c659d850bcd0f66e625fbc2e34d",
+    "metrics.py": "f5ec17599b246c779274dff6819668dfd2a629c9d235fa3e89b9abb39c0b5546"
+   },
+   "git_commit": "12f7caa2528b25dadf787be94121f66b68ac0e7d",
+   "versions": {
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1",
+    "soundfile": "0.14.0",
+    "platform": "Linux-6.18.44-fc-v185-x86_64-with-glibc2.39"
+   },
+   "versions_at_validation": {
+    "seed": 0,
+    "n_boot": 500,
+    "folds": "6→4: train/calibrate on calls 1–3, evaluate calls 4–5; 4→6: swapped",
+    "primary_labelling": "merged (c400 == c500, round 4)",
+    "encoders": {
+     "ERes2Net-base": "../models/3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k.onnx",
+     "ERes2Net-v2": "../models/3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common.onnx",
+     "CAM++ zh-en": "../models/3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced.onnx"
+    },
+    "snorm_topk": 100,
+    "different_trials_cap": 12000,
+    "python": "3.13.18",
+    "numpy": "2.5.4",
+    "sklearn": "1.9.1",
+    "sherpa_onnx": "2.0.1"
+   }
+  },
+  "questioned": {
+   "file": "/home/user/assamese-forensic-ai/forensic/results/_demo_half_a.wav",
+   "sha256": "1b468172a0418cb76390c7e4c9b15e320cd1fae48484cfa9d477364eedd31bb0",
+   "sample_rate": 16000,
+   "channels": 1,
+   "duration_s": 225.03,
+   "speech_s_after_vad": 82.16,
+   "n_segments": 8,
+   "segment_seconds": 10,
+   "resampled_to_16k": false,
+   "mixed_to_mono": false
+  },
+  "known": [
+   {
+    "file": "/home/user/assamese-forensic-ai/forensic/results/_demo_half_b.wav",
+    "sha256": "557fc5b00654223d003fe986c5620a9edfa2e487e57442156a9481e79ab42460",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 112.52,
+    "speech_s_after_vad": 32.65,
+    "n_segments": 3,
+    "segment_seconds": 10,
+    "resampled_to_16k": false,
+    "mixed_to_mono": false
+   },
+   {
+    "file": "/home/user/assamese-forensic-ai/forensic/results/_demo_half_c.wav",
+    "sha256": "c2485db1e32b340ab070f867054f2f1a1a560df0fa2973b8f231a203c0ffde5d",
+    "sample_rate": 16000,
+    "channels": 1,
+    "duration_s": 112.52,
+    "speech_s_after_vad": 27.84,
+    "n_segments": 2,
+    "segment_seconds": 10,
+    "resampled_to_16k": false,
+    "mixed_to_mono": false
+   }
+  ],
+  "result": {
+   "status": "ok",
+   "n_segment_pairs": 40,
+   "raw_score": 0.8474931124089295,
+   "raw_score_pooling": "mean over all questioned × known segment-pair scores",
+   "raw_score_segment_pairs": {
+    "median": 0.8531653337770763,
+    "std": 0.05301753767342497,
+    "min": 0.7158563479304593,
+    "max": 0.919463640413662
+   },
+   "log10_lr": 1.7097856645972642,
+   "lr": 51.2608336266627,
+   "ln_lr": 3.936926983516578,
+   "verbal_equivalent_enfsi": "moderate support for the same-speaker proposition over the different-speaker proposition",
+   "segment_pair_log10_lr": {
+    "median": 1.7856996667299037,
+    "share_supporting_same_speaker": 0.975,
+    "min": -0.051970968433688626,
+    "max": 2.6730010368181074
+   },
+   "within_validated_lr_range": true,
+   "validated_log10_lr_range": {
+    "same_speaker_trials": [
+     -0.6508186104293874,
+     2.8764290394544556
+    ],
+    "different_speaker_trials": [
+     -4.0312750625153155,
+     1.6232753339595642
+    ]
+   },
+   "note": "The calibrator was validated on single 10 s segment pairs. Pooling by the mean score reports the LR of a typical segment pair; it does not combine the pairs as independent evidence, which would overstate the LR because segments of one recording share channel and session."
+  },
+  "validation": {
+   "corpus": "InfoBay call_center_audio_dual_channel_as: 5 Assamese call-centre calls, dual channel (agent / customer), 16 kHz, 10 channels = 9 speakers after merging the repeated agent (round 4)",
+   "protocol": "speaker-disjoint folds; backend and calibration fitted on calls 1–3 (6 speakers), evaluated on calls 4–5; same-speaker trials are distinct 10 s segments of one channel of one call (same session, same channel); different-speaker trials are capped at 12,000 random pairs",
+   "fold": "6→4 (calls 4–5, 3 speakers after merging)",
+   "n_calibration_speakers": 6,
+   "n_evaluation_speakers": 3,
+   "n_same_speaker_trials": 919,
+   "n_different_speaker_trials": 1637,
+   "eer": 0.020416736738759496,
+   "eer_ci95_speaker_bootstrap": [
+    0.0,
+    0.06441820511327237
+   ],
+   "cllr": 0.09326594175694601,
+   "cllr_ci95_speaker_bootstrap": [
+    0.03543405178997726,
+    0.20371095152361202
+   ],
+   "cllr_min": 0.06765089006852054,
+   "cllr_ci95_from_resampling_calibration_speakers": [
+    0.08090459784697066,
+    2.5420959677370525
+   ],
+   "misleading_evidence_rate": {
+    "same_speaker_log10lr_below_minus1": 0.0,
+    "different_speaker_log10lr_above_1": 0.00855222968845449
+   },
+   "other_fold_4_to_6": {
+    "n_calibration_speakers": 3,
+    "n_evaluation_speakers": 6,
+    "eer": 0.024631739545507268,
+    "eer_ci95": [
+     0.0,
+     0.11914205197787286
+    ],
+    "cllr": 0.12145046016301847,
+    "cllr_ci95": [
+     0.009671226944126159,
+     0.5400496736901036
+    ]
+   },
+   "n_bootstrap": 500,
+   "system_selection": "min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)",
+   "robustness": {
+    "clean 3 s": {
+     "6→4": {
+      "eer": 0.06223879022535472,
+      "eer_ci95": [
+       0.019781037414965986,
+       0.11039912068491858
+      ],
+      "cllr": 0.2687568598662453
+     },
+     "4→6": {
+      "eer": 0.06298148148148147,
+      "eer_ci95": [
+       0.01644117923367682,
+       0.19721637538801717
+      ],
+      "cllr": 0.2901001916048619
+     }
+    },
+    "clean 5 s": {
+     "6→4": {
+      "eer": 0.03093868665983633,
+      "eer_ci95": [
+       0.0027495555550891304,
+       0.08160554141918472
+      ],
+      "cllr": 0.1482974218646672
+     },
+     "4→6": {
+      "eer": 0.0397006496211829,
+      "eer_ci95": [
+       0.004503887652176936,
+       0.14854795849127841
+      ],
+      "cllr": 0.16920499187519145
+     }
+    },
+    "clean 10 s": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.06441820511327237
+      ],
+      "cllr": 0.09326594175694601
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.1312908538642283
+      ],
+      "cllr": 0.12145046016301847
+     }
+    },
+    "clean 20 s": {
+     "6→4": {
+      "eer": 0.013689675780666367,
+      "eer_ci95": [
+       0.0,
+       0.025647759103641456
+      ],
+      "cllr": 0.03838602158682525
+     },
+     "4→6": {
+      "eer": 0.016715035160174127,
+      "eer_ci95": [
+       0.0,
+       0.1076923076923077
+      ],
+      "cllr": 0.045408846945040854
+     }
+    },
+    "telephone band 300–3400 Hz, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.020416736738759496,
+      "eer_ci95": [
+       0.0,
+       0.05396210665268961
+      ],
+      "cllr": 0.13662041226002175
+     },
+     "4→6": {
+      "eer": 0.0309697897056593,
+      "eer_ci95": [
+       0.0,
+       0.136689633666204
+      ],
+      "cllr": 0.31988414035867946
+     }
+    },
+    "white noise 10 dB, 10 s [clean-10 s system applied to degraded evaluation audio]": {
+     "6→4": {
+      "eer": 0.021877116703436512,
+      "eer_ci95": [
+       0.0,
+       0.06662153242870732
+      ],
+      "cllr": 0.41476499920137483
+     },
+     "4→6": {
+      "eer": 0.024631739545507268,
+      "eer_ci95": [
+       0.0,
+       0.13627289201891768
+      ],
+      "cllr": 0.36157173370395723
+     }
+    }
+   }
+  },
+  "limitations": [
+   "At least one file has under 30 s of speech after VAD; the score is pooled over very few segment pairs and is unstable.",
+   "Calibration rests on 6 speakers and validation on 3 speakers (one evaluation fold). The 95% speaker-bootstrap interval for the EER is 0.0%–6.4% and for Cllr 0.04–0.20; the point estimates should not be quoted without them.",
+   "All validation same-speaker trials come from one session and one channel per speaker. The validation therefore does not cover the within-speaker variability of casework (different sessions, handsets, days, health, speaking style), and same-speaker LRs obtained here are expected to be too high for cross-session pairs; the only cross-session same-speaker pair in the corpus (call 4 ch00 vs call 5 ch00) is the --demo case.",
+   "Validated conditions: Assamese call-centre conversational speech, 16 kHz dual-channel recordings, 10 s of speech per segment after energy VAD. EER on fold 6→4 by speech per segment: 3 s: 6.2%, 5 s: 3.1%, 10 s: 2.0%, 20 s: 1.4%. Band-limiting to the telephone band and 10 dB white noise were tested with the clean-trained system applied to degraded evaluation audio (see validation.robustness); other channels, codecs and noise types are untested.",
+   "The speaker encoders were trained on Mandarin corpora (3D-Speaker, CN-Celeb) and used zero-shot on Assamese; no Assamese speaker data was used to train them. Language, dialect, gender and age effects are unmeasured: the corpus has no speaker metadata.",
+   "The system was chosen post hoc among 40 configurations on the evaluation folds themselves (min mean-of-folds Cllr over the 24 merged 10 s configurations with both folds available (post hoc)), so its own validation figures are optimistically biased.",
+   "LRs outside the validated range (log10 LR -0.7 to 2.9 for same-speaker and -4.0 to 1.6 for different-speaker validation trials) are extrapolations of the logistic calibrator and have no empirical support.",
+   "The trained backends (LDA, PLDA) were worse than cosine on this corpus because 3–6 training speakers cannot estimate a speaker subspace; the shipped backend is cosine. The remedy is a many-speaker Assamese corpus (IndicVoices, LDC-IL), not a different model.",
+   "No automatic check for recording tampering, overlapping speakers, or non-speech content is performed; the energy VAD is not a speech detector and will pass music or noise bursts."
+  ]
+ }
+}
