@@ -1,0 +1,24 @@
+
+wiki → cc  source only: {'acc': 0.8489394305992419, 'auc': 0.9302095726538423, 'flagged': 0.17150600077429345}
+  k=   25  retrain: flagged 0.124 acc 0.875 | recalibrate: flagged 0.129 acc 0.863
+  k=   50  retrain: flagged 0.103 acc 0.887 | recalibrate: flagged 0.122 acc 0.864
+  k=  100  retrain: flagged 0.084 acc 0.895 | recalibrate: flagged 0.116 acc 0.865
+  k=  250  retrain: flagged 0.058 acc 0.907 | recalibrate: flagged 0.130 acc 0.863
+  k=  500  retrain: flagged 0.046 acc 0.907 | recalibrate: flagged 0.136 acc 0.862
+  k= 1000  retrain: flagged 0.031 acc 0.915 | recalibrate: flagged 0.129 acc 0.863
+  k= 2500  retrain: flagged 0.022 acc 0.917 | recalibrate: flagged 0.127 acc 0.863
+  n=  500  self-training: {'acc': 0.8631341237196548, 'auc': 0.9353249881705167, 'flagged': 0.14827719705768486} | importance weighting: {'acc': 0.881603355109283, 'auc': 0.9492406789915312, 'flagged': 0.11614401858304298}
+  n= 2000  self-training: {'acc': 0.8736994918945076, 'auc': 0.9443835278086524, 'flagged': 0.12853271389856755} | importance weighting: {'acc': 0.9007177998225664, 'auc': 0.9622630460815618, 'flagged': 0.07265453606917022}
+  n= 5000  self-training: {'acc': 0.8825711750947657, 'auc': 0.9504612319036656, 'flagged': 0.11214350238740482} | importance weighting: {'acc': 0.9061214614081781, 'auc': 0.9663214261430889, 'flagged': 0.062072525487159635}
+
+cc → wiki  source only: {'acc': 0.8593434954431809, 'auc': 0.9483826563816073, 'flagged': 0.16776358239772873}
+  k=   25  retrain: flagged 0.106 acc 0.896 | recalibrate: flagged 0.135 acc 0.873
+  k=   50  retrain: flagged 0.091 acc 0.902 | recalibrate: flagged 0.130 acc 0.875
+  k=  100  retrain: flagged 0.066 acc 0.914 | recalibrate: flagged 0.142 acc 0.870
+  k=  250  retrain: flagged 0.036 acc 0.924 | recalibrate: flagged 0.121 acc 0.876
+  k=  500  retrain: flagged 0.022 acc 0.925 | recalibrate: flagged 0.123 acc 0.876
+  k= 1000  retrain: flagged 0.017 acc 0.925 | recalibrate: flagged 0.126 acc 0.875
+  k= 2500  retrain: flagged 0.010 acc 0.926 | recalibrate: flagged 0.122 acc 0.876
+  n=  500  self-training: {'acc': 0.8716832002580853, 'auc': 0.9529772971052805, 'flagged': 0.14840624596722157} | importance weighting: {'acc': 0.9145092346156948, 'auc': 0.972198951789825, 'flagged': 0.07562266098851465}
+  n= 2000  self-training: {'acc': 0.8843455117348173, 'auc': 0.9571488794253021, 'flagged': 0.12414505097431927} | importance weighting: {'acc': 0.9319299943543834, 'auc': 0.9811077391879909, 'flagged': 0.03445605884630275}
+  n= 5000  self-training: {'acc': 0.903943866440842, 'auc': 0.9660372132651178, 'flagged': 0.09239901922828753} | importance weighting: {'acc': 0.9338656343253489, 'auc': 0.98308504600663, 'flagged': 0.027229319912246742}

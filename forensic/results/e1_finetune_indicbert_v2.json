@@ -1,0 +1,86 @@
+{
+ "indicbert_v2 fine-tuned | query 75 words | cosine": {
+  "eer": 0.17759838128080757,
+  "cllr": 0.569755376259932,
+  "cllr_min": 0.5418377892822797,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned | query 75 words | cosine + S-norm": {
+  "eer": 0.16670458682198763,
+  "cllr": 0.5423112581990124,
+  "cllr_min": 0.5172828570629933,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned | query 75 words | fusion neural S-norm + TF-IDF S-norm": {
+  "eer": 0.16011503745281502,
+  "cllr": 0.521864124730901,
+  "cllr_min": 0.494251948873229,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned | query full | cosine": {
+  "eer": 0.18266738366506297,
+  "cllr": 0.5853770598762231,
+  "cllr_min": 0.5611198999747524,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned | query full | cosine + S-norm": {
+  "eer": 0.1618735590340978,
+  "cllr": 0.5223940061820335,
+  "cllr_min": 0.499193711685208,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned | query full | fusion neural S-norm + TF-IDF S-norm": {
+  "eer": 0.14657021418943517,
+  "cllr": 0.4801938896545207,
+  "cllr_min": 0.45685026658879124,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query 75 words | cosine": {
+  "eer": 0.25523026273366,
+  "cllr": 0.742582192066447,
+  "cllr_min": 0.7119411835741343,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query 75 words | cosine + S-norm": {
+  "eer": 0.19651201840024815,
+  "cllr": 0.6055354032136757,
+  "cllr_min": 0.5851588270093434,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query 75 words | fusion neural S-norm + TF-IDF S-norm": {
+  "eer": 0.1639888263359491,
+  "cllr": 0.5364173406941211,
+  "cllr_min": 0.5126079685838381,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query full | cosine": {
+  "eer": 0.22797933264143477,
+  "cllr": 0.7109116876265509,
+  "cllr_min": 0.6804844784703192,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query full | cosine + S-norm": {
+  "eer": 0.18682822430274476,
+  "cllr": 0.5723591775354891,
+  "cllr_min": 0.5511303763052187,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert_v2 fine-tuned poets (transfer) | query full | fusion neural S-norm + TF-IDF S-norm": {
+  "eer": 0.1446398620456531,
+  "cllr": 0.4636324782117942,
+  "cllr_min": 0.44150063445683596,
+  "n_ss": 732,
+  "n_ds": 32208
+ }
+}

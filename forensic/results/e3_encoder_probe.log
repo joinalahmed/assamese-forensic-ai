@@ -1,0 +1,7 @@
+clean 10 s                   n=131  3ds-campplus: 0.070  3ds-eres2net: 0.063  3ds-eres2net: 0.067  3ds-eres2net: 0.069  wes-en-CAM++: 0.198  wes-en-resnet: 0.187  wes-zh-resnet: 0.102
+telephone band 300–3400 Hz   n=131  3ds-campplus: 0.088  3ds-eres2net: 0.058  3ds-eres2net: 0.068  3ds-eres2net: 0.080  wes-en-CAM++: 0.270  wes-en-resnet: 0.163  wes-zh-resnet: 0.101
+8 kHz narrowband             n=131  3ds-campplus: 0.077  3ds-eres2net: 0.065  3ds-eres2net: 0.076  3ds-eres2net: 0.062  wes-en-CAM++: 0.220  wes-en-resnet: 0.169  wes-zh-resnet: 0.097
+white noise 20 dB            n=131  3ds-campplus: 0.071  3ds-eres2net: 0.064  3ds-eres2net: 0.069  3ds-eres2net: 0.077  wes-en-CAM++: 0.151  wes-en-resnet: 0.136  wes-zh-resnet: 0.105
+white noise 10 dB            n=131  3ds-campplus: 0.069  3ds-eres2net: 0.067  3ds-eres2net: 0.080  3ds-eres2net: 0.079  wes-en-CAM++: 0.150  wes-en-resnet: 0.129  wes-zh-resnet: 0.087
+clean 20 s                   n= 62  3ds-campplus: 0.061  3ds-eres2net: 0.049  3ds-eres2net: 0.048  3ds-eres2net: 0.060  wes-en-CAM++: 0.150  wes-en-resnet: 0.137  wes-zh-resnet: 0.088
+clean 30 s                   n= 40  3ds-campplus: 0.037  3ds-eres2net: 0.037  3ds-eres2net: 0.044  3ds-eres2net: 0.038  wes-en-CAM++: 0.134  wes-en-resnet: 0.095  wes-zh-resnet: 0.062

@@ -1,0 +1,770 @@
+{
+ "10 s | GMM-UBM supervector (dev UBM)": {
+  "H1": {
+   "same_speaker": [
+    0.15127399786524356,
+    0.06799942813406666
+   ],
+   "c400_c500": [
+    0.12191098954058198,
+    0.05856587233001908
+   ],
+   "other_cross_call": [
+    0.06266482820416011,
+    0.05121515705205746
+   ],
+   "within_call_pair": [
+    0.07612905749251488,
+    0.05098247807234761
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.2781954887218045
+  },
+  "H2": {
+   "eer_as_labelled": 0.26048899979801377,
+   "false_alarms": 496,
+   "false_alarms_from_c400_c500": 150,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.2605,
+    "cllr": 1.7818,
+    "cllr_min": 0.7538,
+    "misleading_ss": 0.0015,
+    "misleading_ds": 0.4256
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.259,
+    "cllr": 1.6051,
+    "cllr_min": 0.7424,
+    "misleading_ss": 0.0011,
+    "misleading_ds": 0.3702
+   }
+  }
+ },
+ "10 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": {
+  "H1": {
+   "same_speaker": [
+    0.8278055770635689,
+    0.051464016913478385
+   ],
+   "c400_c500": [
+    0.7912767851833339,
+    0.05262136239811906
+   ],
+   "other_cross_call": [
+    0.42968848793314984,
+    0.1116541475788262
+   ],
+   "within_call_pair": [
+    0.4158536051714268,
+    0.1214432225464236
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.19548872180451127
+  },
+  "H2": {
+   "eer_as_labelled": 0.11625916683498852,
+   "false_alarms": 221,
+   "false_alarms_from_c400_c500": 202,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.1163,
+    "cllr": 0.3593,
+    "cllr_min": 0.3062,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0851
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.023,
+    "cllr": 0.125,
+    "cllr_min": 0.0866,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0061
+   }
+  }
+ },
+ "10 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": {
+  "H1": {
+   "same_speaker": [
+    0.7910871059462841,
+    0.06183996390724915
+   ],
+   "c400_c500": [
+    0.735150191810822,
+    0.06722039722066449
+   ],
+   "other_cross_call": [
+    0.4694183826470869,
+    0.08000864236414922
+   ],
+   "within_call_pair": [
+    0.416112688696678,
+    0.07189561124371217
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.16165413533834586
+  },
+  "H2": {
+   "eer_as_labelled": 0.10098265091227762,
+   "false_alarms": 192,
+   "false_alarms_from_c400_c500": 173,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.101,
+    "cllr": 0.4385,
+    "cllr_min": 0.3028,
+    "misleading_ss": 0.0031,
+    "misleading_ds": 0.0972
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.0317,
+    "cllr": 0.1395,
+    "cllr_min": 0.1084,
+    "misleading_ss": 0.0065,
+    "misleading_ds": 0.0104
+   }
+  }
+ },
+ "10 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": {
+  "H1": {
+   "same_speaker": [
+    0.7686551637173434,
+    0.06654709954541609
+   ],
+   "c400_c500": [
+    0.688253400415962,
+    0.0677216732620962
+   ],
+   "other_cross_call": [
+    0.45018146289225935,
+    0.09138837010055618
+   ],
+   "within_call_pair": [
+    0.4158531711321955,
+    0.07828747786394888
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.08270676691729323
+  },
+  "H2": {
+   "eer_as_labelled": 0.09373850750688645,
+   "false_alarms": 179,
+   "false_alarms_from_c400_c500": 166,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.0937,
+    "cllr": 0.3091,
+    "cllr_min": 0.2815,
+    "misleading_ss": 0.0015,
+    "misleading_ds": 0.0431
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.0394,
+    "cllr": 0.2137,
+    "cllr_min": 0.1393,
+    "misleading_ss": 0.0098,
+    "misleading_ds": 0.0006
+   }
+  }
+ },
+ "10 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": {
+  "H1": {
+   "same_speaker": [
+    0.920196641787628,
+    0.023728603117683638
+   ],
+   "c400_c500": [
+    0.9023013192295958,
+    0.027131431603597954
+   ],
+   "other_cross_call": [
+    0.7568225571445615,
+    0.042977053227663896
+   ],
+   "within_call_pair": [
+    0.7556389986041522,
+    0.037685575334505186
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.22180451127819548
+  },
+  "H2": {
+   "eer_as_labelled": 0.10382775966697219,
+   "false_alarms": 197,
+   "false_alarms_from_c400_c500": 180,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.1038,
+    "cllr": 0.3976,
+    "cllr_min": 0.3122,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0983
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.0196,
+    "cllr": 0.15,
+    "cllr_min": 0.0867,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0098
+   }
+  }
+ },
+ "10 s | wespeaker_en_voxceleb_CAM++": {
+  "H1": {
+   "same_speaker": [
+    0.8478012393719935,
+    0.09366855495876998
+   ],
+   "c400_c500": [
+    0.8593836846669286,
+    0.06426310561533964
+   ],
+   "other_cross_call": [
+    0.6446978089033983,
+    0.15024622097906426
+   ],
+   "within_call_pair": [
+    0.6996662320242738,
+    0.11796757620017231
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.47368421052631576
+  },
+  "H2": {
+   "eer_as_labelled": 0.2511654444220015,
+   "false_alarms": 478,
+   "false_alarms_from_c400_c500": 214,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.2512,
+    "cllr": 0.7729,
+    "cllr_min": 0.7277,
+    "misleading_ss": 0.026,
+    "misleading_ds": 0.0168
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.2014,
+    "cllr": 0.6338,
+    "cllr_min": 0.5869,
+    "misleading_ss": 0.0185,
+    "misleading_ds": 0.0037
+   }
+  }
+ },
+ "10 s | wespeaker_en_voxceleb_resnet34_LM": {
+  "H1": {
+   "same_speaker": [
+    0.960305834085291,
+    0.01595824396406344
+   ],
+   "c400_c500": [
+    0.9671361161645134,
+    0.011382751601656714
+   ],
+   "other_cross_call": [
+    0.9026099692875013,
+    0.034383720634679635
+   ],
+   "within_call_pair": [
+    0.8991167759195686,
+    0.03678836082769207
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.6616541353383458
+  },
+  "H2": {
+   "eer_as_labelled": 0.21621337792588313,
+   "false_alarms": 412,
+   "false_alarms_from_c400_c500": 242,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.2162,
+    "cllr": 0.7522,
+    "cllr_min": 0.603,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.1009
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.1295,
+    "cllr": 0.5569,
+    "cllr_min": 0.4103,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0226
+   }
+  }
+ },
+ "10 s | wespeaker_zh_cnceleb_resnet34_LM": {
+  "H1": {
+   "same_speaker": [
+    0.9364905351585794,
+    0.021398064403807447
+   ],
+   "c400_c500": [
+    0.9431896931967884,
+    0.014311741796880618
+   ],
+   "other_cross_call": [
+    0.7946812809067124,
+    0.05909004634892182
+   ],
+   "within_call_pair": [
+    0.782756136991299,
+    0.06022633514340147
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.6466165413533834
+  },
+  "H2": {
+   "eer_as_labelled": 0.15147397636841645,
+   "false_alarms": 288,
+   "false_alarms_from_c400_c500": 251,
+   "c400_c500_trials": 266,
+   "different_trials": 1903
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 653,
+    "n_ds": 1903,
+    "eer": 0.1515,
+    "cllr": 0.488,
+    "cllr_min": 0.3987,
+    "misleading_ss": 0.0015,
+    "misleading_ds": 0.1345
+   },
+   "merged": {
+    "n_ss": 919,
+    "n_ds": 1637,
+    "eer": 0.0403,
+    "cllr": 0.1856,
+    "cllr_min": 0.1481,
+    "misleading_ss": 0.0011,
+    "misleading_ds": 0.0147
+   }
+  }
+ },
+ "3 s | GMM-UBM supervector (dev UBM)": {
+  "H1": {
+   "same_speaker": [
+    0.05772628270848306,
+    0.05534874266197371
+   ],
+   "c400_c500": [
+    0.044370200766673244,
+    0.05061276359445041
+   ],
+   "other_cross_call": [
+    0.022815596500149662,
+    0.04436554236190999
+   ],
+   "within_call_pair": [
+    0.027643369863595203,
+    0.044212226794675326
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.4036458333333333
+  },
+  "H2": {
+   "eer_as_labelled": 0.3804791198159264,
+   "false_alarms": 8253,
+   "false_alarms_from_c400_c500": 1626,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.3805,
+    "cllr": 1.064,
+    "cllr_min": 0.9328,
+    "misleading_ss": 0.0039,
+    "misleading_ds": 0.0523
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.3832,
+    "cllr": 1.0483,
+    "cllr_min": 0.9329,
+    "misleading_ss": 0.0038,
+    "misleading_ds": 0.042
+   }
+  }
+ },
+ "3 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": {
+  "H1": {
+   "same_speaker": [
+    0.6400410515155573,
+    0.09212719029417747
+   ],
+   "c400_c500": [
+    0.612283520430079,
+    0.0862566990618461
+   ],
+   "other_cross_call": [
+    0.3681744755579925,
+    0.11321055083079473
+   ],
+   "within_call_pair": [
+    0.35507347232947944,
+    0.11738820275580512
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.3528645833333333
+  },
+  "H2": {
+   "eer_as_labelled": 0.16689311099788162,
+   "false_alarms": 3620,
+   "false_alarms_from_c400_c500": 2401,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.1669,
+    "cllr": 0.5477,
+    "cllr_min": 0.5218,
+    "misleading_ss": 0.0122,
+    "misleading_ds": 0.06
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.1091,
+    "cllr": 0.3818,
+    "cllr_min": 0.3696,
+    "misleading_ss": 0.0122,
+    "misleading_ds": 0.0095
+   }
+  }
+ },
+ "3 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": {
+  "H1": {
+   "same_speaker": [
+    0.6019361490415354,
+    0.0915001938764318
+   ],
+   "c400_c500": [
+    0.5590110465843332,
+    0.08396376571390077
+   ],
+   "other_cross_call": [
+    0.37656645168005104,
+    0.08916791186220256
+   ],
+   "within_call_pair": [
+    0.3383389391634469,
+    0.08488798332261674
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.3128255208333333
+  },
+  "H2": {
+   "eer_as_labelled": 0.14980542009084255,
+   "false_alarms": 3250,
+   "false_alarms_from_c400_c500": 2229,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.1498,
+    "cllr": 0.5298,
+    "cllr_min": 0.5049,
+    "misleading_ss": 0.0089,
+    "misleading_ds": 0.0525
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.1078,
+    "cllr": 0.3891,
+    "cllr_min": 0.3685,
+    "misleading_ss": 0.0087,
+    "misleading_ds": 0.0044
+   }
+  }
+ },
+ "3 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": {
+  "H1": {
+   "same_speaker": [
+    0.5844647876661739,
+    0.09744931118873039
+   ],
+   "c400_c500": [
+    0.5027612401753997,
+    0.0919498800987098
+   ],
+   "other_cross_call": [
+    0.3684527981160555,
+    0.10552653079308943
+   ],
+   "within_call_pair": [
+    0.3423106407749287,
+    0.0944222606572018
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.17154947916666666
+  },
+  "H2": {
+   "eer_as_labelled": 0.16470744093880268,
+   "false_alarms": 3573,
+   "false_alarms_from_c400_c500": 1748,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.1647,
+    "cllr": 0.5478,
+    "cllr_min": 0.5413,
+    "misleading_ss": 0.024,
+    "misleading_ds": 0.0215
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.1617,
+    "cllr": 0.5636,
+    "cllr_min": 0.5286,
+    "misleading_ss": 0.0403,
+    "misleading_ds": 0.0073
+   }
+  }
+ },
+ "3 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": {
+  "H1": {
+   "same_speaker": [
+    0.8191171442493432,
+    0.04658171825667768
+   ],
+   "c400_c500": [
+    0.806631618483728,
+    0.04725686165810542
+   ],
+   "other_cross_call": [
+    0.676062378631774,
+    0.06570580868293802
+   ],
+   "within_call_pair": [
+    0.6746569585311557,
+    0.06181108733726415
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.3919270833333333
+  },
+  "H2": {
+   "eer_as_labelled": 0.15832621557202203,
+   "false_alarms": 3434,
+   "false_alarms_from_c400_c500": 2397,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.1583,
+    "cllr": 0.6227,
+    "cllr_min": 0.5225,
+    "misleading_ss": 0.006,
+    "misleading_ds": 0.0928
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.1015,
+    "cllr": 0.4231,
+    "cllr_min": 0.3719,
+    "misleading_ss": 0.006,
+    "misleading_ds": 0.0187
+   }
+  }
+ },
+ "3 s | wespeaker_en_voxceleb_CAM++": {
+  "H1": {
+   "same_speaker": [
+    0.845018044681864,
+    0.0810966156657849
+   ],
+   "c400_c500": [
+    0.8268353801785301,
+    0.08475720872527764
+   ],
+   "other_cross_call": [
+    0.8003237441181218,
+    0.08506563034005094
+   ],
+   "within_call_pair": [
+    0.8106531693050051,
+    0.08141299099695719
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.4153645833333333
+  },
+  "H2": {
+   "eer_as_labelled": 0.4042390707619026,
+   "false_alarms": 8769,
+   "false_alarms_from_c400_c500": 1563,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.4042,
+    "cllr": 0.9751,
+    "cllr_min": 0.9509,
+    "misleading_ss": 0.0,
+    "misleading_ds": 0.0
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.4099,
+    "cllr": 0.9789,
+    "cllr_min": 0.9531,
+    "misleading_ss": 0.0002,
+    "misleading_ds": 0.0
+   }
+  }
+ },
+ "3 s | wespeaker_en_voxceleb_resnet34_LM": {
+  "H1": {
+   "same_speaker": [
+    0.9079971303083553,
+    0.04179983567943885
+   ],
+   "c400_c500": [
+    0.9261427244474078,
+    0.02933271979466277
+   ],
+   "other_cross_call": [
+    0.8567311537714449,
+    0.05536319656650492
+   ],
+   "within_call_pair": [
+    0.8548166607250763,
+    0.05491610361119359
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.7164713541666666
+  },
+  "H2": {
+   "eer_as_labelled": 0.33472416844512054,
+   "false_alarms": 7261,
+   "false_alarms_from_c400_c500": 2630,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.3347,
+    "cllr": 0.9777,
+    "cllr_min": 0.8711,
+    "misleading_ss": 0.008,
+    "misleading_ds": 0.0238
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.262,
+    "cllr": 0.8522,
+    "cllr_min": 0.7678,
+    "misleading_ss": 0.0057,
+    "misleading_ds": 0.0091
+   }
+  }
+ },
+ "3 s | wespeaker_zh_cnceleb_resnet34_LM": {
+  "H1": {
+   "same_speaker": [
+    0.8452064428018053,
+    0.0455625537844766
+   ],
+   "c400_c500": [
+    0.8568785259727868,
+    0.03603916593911276
+   ],
+   "other_cross_call": [
+    0.7191783942004044,
+    0.07823814552160759
+   ],
+   "within_call_pair": [
+    0.7103867380893174,
+    0.07595095810478812
+   ],
+   "share_of_c400_c500_above_same_speaker_median": 0.6175130208333334
+  },
+  "H2": {
+   "eer_as_labelled": 0.20892363402773045,
+   "false_alarms": 4532,
+   "false_alarms_from_c400_c500": 2724,
+   "c400_c500_trials": 3072,
+   "different_trials": 21692
+  },
+  "H3": {
+   "as_labelled": {
+    "n_ss": 7711,
+    "n_ds": 21692,
+    "eer": 0.2089,
+    "cllr": 0.6669,
+    "cllr_min": 0.6352,
+    "misleading_ss": 0.0096,
+    "misleading_ds": 0.0637
+   },
+   "merged": {
+    "n_ss": 10783,
+    "n_ds": 18620,
+    "eer": 0.1333,
+    "cllr": 0.4614,
+    "cllr_min": 0.4447,
+    "misleading_ss": 0.007,
+    "misleading_ds": 0.0077
+   }
+  }
+ }
+}

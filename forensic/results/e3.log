@@ -1,0 +1,17 @@
+call1 ch00: 94 s speech
+call1 ch01: 51 s speech
+call2 ch00: 157 s speech
+call2 ch01: 64 s speech
+call3 ch00: 176 s speech
+call3 ch01: 75 s speech
+call4 ch00: 145 s speech
+call4 ch01: 143 s speech
+call5 ch00: 192 s speech
+call5 ch01: 255 s speech
+total speech 22.5 min
+10s 6→4: EER 0.260 raw 0.486 Cllr 1.782 min 0.754  (653/1903)
+10s 4→6: EER 0.130 raw 0.474 Cllr 1.169 min 0.392  (323/1388)
+3s 6→4: EER 0.388 raw 0.491 Cllr 1.068 min 0.937  (7711/12000)
+3s 4→6: EER 0.262 raw 0.470 Cllr 0.856 min 0.727  (4050/12000)
+most similar cross-call channel pairs: [(0.2829057522400031, "(4, '00')", "(5, '00')"), (0.1276864077341202, "(1, '01')", "(3, '01')"), (0.1258597058673273, "(2, '01')", "(3, '01')")]
+merged 10 s 6→4: {'eer': 0.26, 'cllr_min': 0.744}

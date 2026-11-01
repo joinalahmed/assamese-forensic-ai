@@ -1,0 +1,128 @@
+{
+ "clean 10 s": {
+  "n_segments": 131,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.07044545319024789,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.06298731050266766,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.06701762858949929,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.06889322958946614,
+  "wespeaker_en_voxceleb_CAM++": 0.1983437164919226,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.1870256181302402,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.1020432979066411
+ },
+ "telephone band 300\u20133400 Hz": {
+  "n_segments": 131,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.08759078639183139,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.058397433340464655,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.06848722442674673,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.08039708903678097,
+  "wespeaker_en_voxceleb_CAM++": 0.27045009440098733,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.16303776771885892,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.10120516167056814
+ },
+ "8 kHz narrowband": {
+  "n_segments": 131,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.07724897950597098,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.06509104261299534,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.0760908704611535,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.062222777087618114,
+  "wespeaker_en_voxceleb_CAM++": 0.219970712107737,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.1686446295461789,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.0974517184492178
+ },
+ "white noise 20 dB": {
+  "n_segments": 131,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.0707098985227777,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.06449249264354924,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.06915427033155537,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.07691317257383437,
+  "wespeaker_en_voxceleb_CAM++": 0.15130507470243534,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.13576241115197435,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.10459964118909926
+ },
+ "white noise 10 dB": {
+  "n_segments": 131,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.06860786870767031,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.06656063845024279,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.07950626552895063,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.0789937479134794,
+  "wespeaker_en_voxceleb_CAM++": 0.15037582468651356,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.1287098381766244,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.0868840216744132
+ },
+ "clean 20 s": {
+  "n_segments": 62,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.06114670042877711,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.049390100562412644,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.04772112208236361,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.059970920347604165,
+  "wespeaker_en_voxceleb_CAM++": 0.1502107121590374,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.13733945753767932,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.08833935871899638
+ },
+ "clean 30 s": {
+  "n_segments": 40,
+  "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.036647727272727276,
+  "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.036647727272727276,
+  "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.04403409090909091,
+  "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.03806818181818182,
+  "wespeaker_en_voxceleb_CAM++": 0.13401278409090908,
+  "wespeaker_en_voxceleb_resnet34_LM": 0.09501420454545456,
+  "wespeaker_zh_cnceleb_resnet34_LM": 0.06164772727272727
+ },
+ "relative_change_vs_clean_10s": {
+  "telephone band 300\u20133400 Hz": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.2433845255460293,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": -0.07286987054334722,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.021928496549006613,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.16698098660588534,
+   "wespeaker_en_voxceleb_CAM++": 0.3635425370886464,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.12825970394428385,
+   "wespeaker_zh_cnceleb_resnet34_LM": -0.008213535364564194
+  },
+  "8 kHz narrowband": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.09657864358327296,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.03339930048670004,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.13538589864511932,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": -0.09682304838366801,
+   "wespeaker_en_voxceleb_CAM++": 0.10903796701165047,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.0982805926151851,
+   "wespeaker_zh_cnceleb_resnet34_LM": -0.044996384393849356
+  },
+  "white noise 20 dB": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": 0.0037539020696714,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.02389659327997232,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.03188178673321275,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.11641119210347611,
+   "wespeaker_en_voxceleb_CAM++": -0.2371572067996561,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.2740972466272903,
+   "wespeaker_zh_cnceleb_resnet34_LM": 0.025051554927173585
+  },
+  "white noise 10 dB": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": -0.026085210604223412,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": 0.05673091800647357,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": 0.18634853548679764,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": 0.14661118928815095,
+   "wespeaker_en_voxceleb_CAM++": -0.24184225572561804,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.3118063746379712,
+   "wespeaker_zh_cnceleb_resnet34_LM": -0.14855729423893227
+  },
+  "clean 20 s": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": -0.13199933197048486,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": -0.21587221031892043,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": -0.28793180112850447,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": -0.12950923182190618,
+   "wespeaker_en_voxceleb_CAM++": -0.24267471228333762,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.26566499867392834,
+   "wespeaker_zh_cnceleb_resnet34_LM": -0.13429533804544794
+  },
+  "clean 30 s": {
+   "3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced": -0.47977157342213533,
+   "3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k": -0.41817285132097903,
+   "3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k": -0.34294764174943626,
+   "3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common": -0.44743217809602454,
+   "wespeaker_en_voxceleb_CAM++": -0.32434066245619303,
+   "wespeaker_en_voxceleb_resnet34_LM": -0.4919722469288196,
+   "wespeaker_zh_cnceleb_resnet34_LM": -0.3958669649316071
+  }
+ }
+}

@@ -1,0 +1,108 @@
+{
+ "all namespaces": {
+  "n_editors": 616,
+  "n_sessions": 32389,
+  "median_words": 349.0,
+  "questioned truncated to 75 words": {
+   "cosine fused": {
+    "eer": 0.26530584185107897,
+    "cllr": 0.7579488903650626,
+    "cllr_min": 0.7189617415695476,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "cosine fused + S-norm": {
+    "eer": 0.2228057804841596,
+    "cllr": 0.6463243969797025,
+    "cllr_min": 0.6115413976269684,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "author SVM vs impostors": {
+    "eer": 0.19786508630363897,
+    "cllr": 0.6139181047416302,
+    "cllr_min": 0.5578844582017114,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "n_authors_used": 150
+  },
+  "questioned full session": {
+   "cosine fused": {
+    "eer": 0.22962170323703507,
+    "cllr": 0.6908686397551447,
+    "cllr_min": 0.6415579895783174,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "cosine fused + S-norm": {
+    "eer": 0.17678965356846305,
+    "cllr": 0.5743620092840482,
+    "cllr_min": 0.5245454568291186,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "author SVM vs impostors": {
+    "eer": 0.15813553420136367,
+    "cllr": 0.530013697839042,
+    "cllr_min": 0.4734764115235314,
+    "n_ss": 1028,
+    "n_ds": 76072
+   },
+   "n_authors_used": 150
+  }
+ },
+ "talk/user namespaces": {
+  "n_editors": 202,
+  "n_sessions": 7663,
+  "median_words": 400.0,
+  "questioned truncated to 75 words": {
+   "cosine fused": {
+    "eer": 0.28317150022951126,
+    "cllr": 0.8074538102038236,
+    "cllr_min": 0.7792825009960549,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "cosine fused + S-norm": {
+    "eer": 0.26032299564758127,
+    "cllr": 0.7256948157612352,
+    "cllr_min": 0.6945928627535176,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "author SVM vs impostors": {
+    "eer": 0.22057381967602963,
+    "cllr": 0.6907925874710188,
+    "cllr_min": 0.6128769770504856,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "n_authors_used": 150
+  },
+  "questioned full session": {
+   "cosine fused": {
+    "eer": 0.23729793329240845,
+    "cllr": 0.7241965904165437,
+    "cllr_min": 0.6835986791609525,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "cosine fused + S-norm": {
+    "eer": 0.18486248679618844,
+    "cllr": 0.5934911419900757,
+    "cllr_min": 0.5522663216558222,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "author SVM vs impostors": {
+    "eer": 0.14033660732555758,
+    "cllr": 0.5335406509405752,
+    "cllr_min": 0.4422351175777668,
+    "n_ss": 1083,
+    "n_ds": 80142
+   },
+   "n_authors_used": 150
+  }
+ }
+}

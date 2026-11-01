@@ -1,0 +1,114 @@
+{
+ "indicbert zero-shot | query 75 words | cosine": {
+  "eer": 0.27990009371402713,
+  "cllr": 0.8360466230858918,
+  "cllr_min": 0.7723930712536424,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert zero-shot | query 75 words | cosine + S-norm": {
+  "eer": 0.22096115500283686,
+  "cllr": 0.6981428913702423,
+  "cllr_min": 0.6524745908787493,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert zero-shot | query full | cosine": {
+  "eer": 0.2871959315977791,
+  "cllr": 0.8494408194600425,
+  "cllr_min": 0.7732423647735168,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert zero-shot | query full | cosine + S-norm": {
+  "eer": 0.22776003387807175,
+  "cllr": 0.7032898923586227,
+  "cllr_min": 0.6519539926849374,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert zero-shot poets | query 75 words | cosine": {
+  "eer": 0.29755136803822324,
+  "cllr": 0.8571181017109178,
+  "cllr_min": 0.8082778815979041,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert zero-shot poets | query 75 words | cosine + S-norm": {
+  "eer": 0.2159217331040882,
+  "cllr": 0.6681629226155489,
+  "cllr_min": 0.6269645857842333,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert zero-shot poets | query full | cosine": {
+  "eer": 0.2965211139928905,
+  "cllr": 0.8522496443702945,
+  "cllr_min": 0.7999350586146778,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert zero-shot poets | query full | cosine + S-norm": {
+  "eer": 0.2061919943851685,
+  "cllr": 0.6534410831497159,
+  "cllr_min": 0.6113932311604959,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert fine-tuned | query 75 words | cosine": {
+  "eer": 0.1695913355109751,
+  "cllr": 0.5518352055976552,
+  "cllr_min": 0.5231131648250741,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert fine-tuned | query 75 words | cosine + S-norm": {
+  "eer": 0.1616232860089795,
+  "cllr": 0.5316653732676061,
+  "cllr_min": 0.5088947379182623,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert fine-tuned | query full | cosine": {
+  "eer": 0.15966158413601078,
+  "cllr": 0.5326438482987637,
+  "cllr_min": 0.503683039621929,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert fine-tuned | query full | cosine + S-norm": {
+  "eer": 0.15370330286602585,
+  "cllr": 0.5131665481592605,
+  "cllr_min": 0.48682385952758234,
+  "n_ss": 1028,
+  "n_ds": 76072
+ },
+ "indicbert fine-tuned poets (transfer) | query 75 words | cosine": {
+  "eer": 0.260697672682202,
+  "cllr": 0.7566488259749247,
+  "cllr_min": 0.7217297350442158,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert fine-tuned poets (transfer) | query 75 words | cosine + S-norm": {
+  "eer": 0.1945596053191569,
+  "cllr": 0.5966279469361347,
+  "cllr_min": 0.574738793517624,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert fine-tuned poets (transfer) | query full | cosine": {
+  "eer": 0.23899488440791425,
+  "cllr": 0.7256841148016985,
+  "cllr_min": 0.6885080038753318,
+  "n_ss": 732,
+  "n_ds": 32208
+ },
+ "indicbert fine-tuned poets (transfer) | query full | cosine + S-norm": {
+  "eer": 0.17901017213069687,
+  "cllr": 0.5622543209456519,
+  "cllr_min": 0.539788488691729,
+  "n_ss": 732,
+  "n_ds": 32208
+ }
+}

@@ -1,0 +1,19 @@
+{
+ "unseen_tokens": 9414,
+ "neural_unseen_acc": 0.3978117697046951,
+ "copy_unseen_acc": 0.1584873592521776,
+ "viterbi+neural lambda=0.2": {
+  "token_acc": 0.8318829612813722,
+  "in_vocab_acc": 0.864275516633567,
+  "unseen_acc": 0.40046738899511364,
+  "sentence_acc": 0.24363756942717402,
+  "lookup_token_acc_same_split": 0.7965250421015928
+ },
+ "viterbi+neural lambda=0.4": {
+  "token_acc": 0.8310223824679324,
+  "in_vocab_acc": 0.8633343701895851,
+  "unseen_acc": 0.40067983853834716,
+  "sentence_acc": 0.24197960706291968,
+  "lookup_token_acc_same_split": 0.7965250421015928
+ }
+}

@@ -1,0 +1,123 @@
+{
+ "oracle_recall_dev": 0.9996931843085689,
+ "oracle_recall_test": 0.9648127128263337,
+ "dev_grid": {
+  "order=2 lam=0.2 mu=1.0 nu=0.0": {
+   "token_acc": 0.8835664335664336,
+   "sentence_acc": 0.332
+  },
+  "order=2 lam=0.2 mu=0.7 nu=0.0": {
+   "token_acc": 0.8845279720279721,
+   "sentence_acc": 0.333
+  },
+  "order=2 lam=0.2 mu=0.4 nu=0.0": {
+   "token_acc": 0.8847902097902098,
+   "sentence_acc": 0.333
+  },
+  "order=2 lam=0.35 mu=1.0 nu=0.0": {
+   "token_acc": 0.881993006993007,
+   "sentence_acc": 0.337
+  },
+  "order=2 lam=0.35 mu=0.7 nu=0.0": {
+   "token_acc": 0.8826923076923077,
+   "sentence_acc": 0.332
+  },
+  "order=2 lam=0.35 mu=0.4 nu=0.0": {
+   "token_acc": 0.8833041958041958,
+   "sentence_acc": 0.329
+  },
+  "order=2 lam=0.5 mu=1.0 nu=0.0": {
+   "token_acc": 0.8782342657342658,
+   "sentence_acc": 0.324
+  },
+  "order=2 lam=0.5 mu=0.7 nu=0.0": {
+   "token_acc": 0.8805944055944056,
+   "sentence_acc": 0.327
+  },
+  "order=2 lam=0.5 mu=0.4 nu=0.0": {
+   "token_acc": 0.8793706293706294,
+   "sentence_acc": 0.321
+  },
+  "order=3 lam=0.2 mu=1.0 nu=0.3": {
+   "token_acc": 0.8840034965034965,
+   "sentence_acc": 0.339
+  },
+  "order=3 lam=0.2 mu=1.0 nu=0.6": {
+   "token_acc": 0.8840034965034965,
+   "sentence_acc": 0.341
+  },
+  "order=3 lam=0.2 mu=0.7 nu=0.3": {
+   "token_acc": 0.8850524475524476,
+   "sentence_acc": 0.339
+  },
+  "order=3 lam=0.2 mu=0.7 nu=0.6": {
+   "token_acc": 0.884965034965035,
+   "sentence_acc": 0.342
+  },
+  "order=3 lam=0.2 mu=0.4 nu=0.3": {
+   "token_acc": 0.8847027972027972,
+   "sentence_acc": 0.337
+  },
+  "order=3 lam=0.2 mu=0.4 nu=0.6": {
+   "token_acc": 0.8848776223776224,
+   "sentence_acc": 0.339
+  },
+  "order=3 lam=0.35 mu=1.0 nu=0.3": {
+   "token_acc": 0.8820804195804196,
+   "sentence_acc": 0.338
+  },
+  "order=3 lam=0.35 mu=1.0 nu=0.6": {
+   "token_acc": 0.8814685314685314,
+   "sentence_acc": 0.34
+  },
+  "order=3 lam=0.35 mu=0.7 nu=0.3": {
+   "token_acc": 0.8826048951048951,
+   "sentence_acc": 0.336
+  },
+  "order=3 lam=0.35 mu=0.7 nu=0.6": {
+   "token_acc": 0.8818181818181818,
+   "sentence_acc": 0.338
+  },
+  "order=3 lam=0.35 mu=0.4 nu=0.3": {
+   "token_acc": 0.8829545454545454,
+   "sentence_acc": 0.333
+  },
+  "order=3 lam=0.35 mu=0.4 nu=0.6": {
+   "token_acc": 0.8819055944055944,
+   "sentence_acc": 0.337
+  },
+  "order=3 lam=0.5 mu=1.0 nu=0.3": {
+   "token_acc": 0.8773601398601398,
+   "sentence_acc": 0.324
+  },
+  "order=3 lam=0.5 mu=1.0 nu=0.6": {
+   "token_acc": 0.8769230769230769,
+   "sentence_acc": 0.323
+  },
+  "order=3 lam=0.5 mu=0.7 nu=0.3": {
+   "token_acc": 0.8786713286713287,
+   "sentence_acc": 0.322
+  },
+  "order=3 lam=0.5 mu=0.7 nu=0.6": {
+   "token_acc": 0.8784090909090909,
+   "sentence_acc": 0.318
+  },
+  "order=3 lam=0.5 mu=0.4 nu=0.3": {
+   "token_acc": 0.8786713286713287,
+   "sentence_acc": 0.319
+  },
+  "order=3 lam=0.5 mu=0.4 nu=0.6": {
+   "token_acc": 0.8784965034965035,
+   "sentence_acc": 0.32
+  }
+ },
+ "best_dev_config": "order=3 lam=0.2 mu=0.7 nu=0.3",
+ "test | in-domain bigram only (lam=0.2, mu=1)": {
+  "token_acc": 0.8384263277766649,
+  "sentence_acc": 0.257398657050485
+ },
+ "test | best": {
+  "token_acc": 0.8406890565533819,
+  "sentence_acc": 0.26054878554256816
+ }
+}

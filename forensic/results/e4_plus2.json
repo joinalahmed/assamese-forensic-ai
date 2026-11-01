@@ -1,0 +1,72 @@
+{
+ "train wiki → test cc | char (script-norm) C=1": {
+  "acc": 0.8063235221124733,
+  "auc": 0.9352733411461531,
+  "flagged": 0.22765696586436085
+ },
+ "train wiki → test cc | char (script-norm) C=0.05": {
+  "acc": 0.8327790738075148,
+  "auc": 0.8827495852475089,
+  "flagged": 0.14686713557462736
+ },
+ "train wiki → test cc | style-only view C=1": {
+  "acc": 0.8556112572591453,
+  "auc": 0.930783537014795,
+  "flagged": 0.14493127702135897
+ },
+ "train wiki → test cc | char-LM perplexity only": {
+  "acc": 0.7818037424926788,
+  "auc": 0.9358391252972307,
+  "flagged": 0.2714073691682261
+ },
+ "train wiki → test cc | fusion z: char + style": {
+  "acc": 0.8005162058867326,
+  "auc": 0.9536927230452512,
+  "flagged": 0.24462799251468026
+ },
+ "train wiki → test cc | fusion z: char + style + LM": {
+  "acc": 0.8048344666699757,
+  "auc": 0.9655792414903752,
+  "flagged": 0.2448215783700071
+ },
+ "train wiki → test cc | rank-ensemble: char + style + LM": {
+  "acc": 0.7572839628728844,
+  "auc": 0.965657924773508,
+  "flagged": 0.3089630251016326
+ },
+ "train cc → test wiki | char (script-norm) C=1": {
+  "acc": 0.8300987740110191,
+  "auc": 0.9585797181695243,
+  "flagged": 0.20449119184358264
+ },
+ "train cc → test wiki | char (script-norm) C=0.05": {
+  "acc": 0.8332754256216807,
+  "auc": 0.9025277872026566,
+  "flagged": 0.15951474478931407
+ },
+ "train cc → test wiki | style-only view C=1": {
+  "acc": 0.7117188663324564,
+  "auc": 0.8991883826283409,
+  "flagged": 0.34709943860101955
+ },
+ "train cc → test wiki | char-LM perplexity only": {
+  "acc": 0.8756142353700302,
+  "auc": 0.9808283670582096,
+  "flagged": 0.1537716977479512
+ },
+ "train cc → test wiki | fusion z: char + style": {
+  "acc": 0.7774358465280191,
+  "auc": 0.951712638103386,
+  "flagged": 0.27566625798541655
+ },
+ "train cc → test wiki | fusion z: char + style + LM": {
+  "acc": 0.8012110984265648,
+  "auc": 0.977086359413303,
+  "flagged": 0.25282312705684973
+ },
+ "train cc → test wiki | rank-ensemble: char + style + LM": {
+  "acc": 0.7518240929170596,
+  "auc": 0.9749562697185234,
+  "flagged": 0.31831967477576306
+ }
+}

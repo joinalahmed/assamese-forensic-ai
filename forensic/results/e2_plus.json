@@ -1,0 +1,45 @@
+{
+ "lambda=0.0 (2k dev sentences)": {
+  "token_acc": 0.8095216462999136,
+  "in_vocab_acc": 0.856795052831475,
+  "unseen_acc": 0.15176151761517614,
+  "sentence_acc": 0.2205,
+  "lookup_token_acc_same_split": 0.7993458410938991
+ },
+ "lambda=0.2 (2k dev sentences)": {
+  "token_acc": 0.8176077772225503,
+  "in_vocab_acc": 0.8637580951453474,
+  "unseen_acc": 0.17547425474254744,
+  "sentence_acc": 0.2335,
+  "lookup_token_acc_same_split": 0.7993458410938991
+ },
+ "lambda=0.4 (2k dev sentences)": {
+  "token_acc": 0.815972379957298,
+  "in_vocab_acc": 0.8616643131908263,
+  "unseen_acc": 0.1802168021680217,
+  "sentence_acc": 0.227,
+  "lookup_token_acc_same_split": 0.7993458410938991
+ },
+ "lambda=0.7 (2k dev sentences)": {
+  "token_acc": 0.8115204651796666,
+  "in_vocab_acc": 0.8571359010566295,
+  "unseen_acc": 0.17682926829268292,
+  "sentence_acc": 0.221,
+  "lookup_token_acc_same_split": 0.7993458410938991
+ },
+ "lambda=1.0 (2k dev sentences)": {
+  "token_acc": 0.8049334484168446,
+  "in_vocab_acc": 0.8504163217607246,
+  "unseen_acc": 0.17208672086720866,
+  "sentence_acc": 0.2105,
+  "lookup_token_acc_same_split": 0.7993458410938991
+ },
+ "final": {
+  "token_acc": 0.8157396897465002,
+  "in_vocab_acc": 0.864211710094992,
+  "unseen_acc": 0.1701720841300191,
+  "sentence_acc": 0.22133797562795324,
+  "lookup_token_acc_same_split": 0.7965250421015928,
+  "lambda": 0.2
+ }
+}

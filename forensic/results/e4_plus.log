@@ -1,0 +1,18 @@
+  raw | char | train wiki → test cc                              acc 0.757  AUC 0.919  flagged 0.296
+  raw | char | train cc → test wiki                              acc 0.805  AUC 0.954  flagged 0.238
+  raw | fused | train wiki → test cc                             acc 0.762  AUC 0.927  flagged 0.294
+  raw | fused | train cc → test wiki                             acc 0.829  AUC 0.964  flagged 0.209
+  raw | fused+lm | train wiki → test cc                          acc 0.704  AUC 0.904  flagged 0.375
+  raw | fused+lm | train cc → test wiki                          acc 0.874  AUC 0.985  flagged 0.157
+  raw | char | train wiki+cc → test wiki+cc                      acc 0.951  AUC 0.989  flagged 0.023
+  raw | fused+lm | train wiki+cc → test wiki+cc                  acc 0.977  AUC 0.996  flagged 0.017
+  script-normalised | char | train wiki → test cc                acc 0.806  AUC 0.935  flagged 0.228
+  script-normalised | char | train cc → test wiki                acc 0.830  AUC 0.959  flagged 0.204
+  script-normalised | fused | train wiki → test cc               acc 0.799  AUC 0.936  flagged 0.242
+  script-normalised | fused | train cc → test wiki               acc 0.845  AUC 0.965  flagged 0.186
+  script-normalised | fused+lm | train wiki → test cc            acc 0.773  AUC 0.939  flagged 0.286
+  script-normalised | fused+lm | train cc → test wiki            acc 0.883  AUC 0.984  flagged 0.145
+  script-normalised | char | train wiki+cc → test wiki+cc        acc 0.948  AUC 0.988  flagged 0.024
+  script-normalised | fused+lm | train wiki+cc → test wiki+cc    acc 0.974  AUC 0.996  flagged 0.019
+calibrated (script-normalised | fused+lm | train cc → test wiki) wiki→cc: {'n_ss': 4650, 'n_ds': 15497, 'eer': 0.136, 'cllr': 0.84, 'cllr_min': 0.458, 'misleading_ss': 0.008, 'misleading_ds': 0.157}
+calibrated (script-normalised | fused+lm | train cc → test wiki) cc→wiki: {'n_ss': 4650, 'n_ds': 15497, 'eer': 0.07, 'cllr': 0.356, 'cllr_min': 0.256, 'misleading_ss': 0.006, 'misleading_ds': 0.044}

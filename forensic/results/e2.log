@@ -1,0 +1,7 @@
+60314 aligned sentences (0 skipped for token mismatch)
+Matplotlib is building the font cache; this may take a moment.
+>=5 {'types': 8902, 'mean': 5.731858009436082, 'median': 3.0, 'ge2': 0.8034149629296787, 'ge5': 0.3787912828577848}
+>=20 {'types': 3238, 'mean': 10.488264360716492, 'median': 7.0, 'ge2': 0.9200123533045089, 'ge5': 0.7063001852995676}
+>=100 {'types': 913, 'mean': 20.113910186199345, 'median': 15.0, 'ge2': 0.9704271631982475, 'ge5': 0.9145673603504929}
+{'roman_ambiguous_share': 0.6304723764448894, 'roman_mean_readings_when_ambiguous': 3.245416486213368, 'n_tokens': 671921, 'latin_stays_share': 0.18891506590804574, 'most_variable': {'word': 'মজা', 'variants': 127, 'top': [('moja', 1023), ('mojja', 336), ('moza', 151), ('mojaa', 139)]}}
+{'n_train': 48251, 'n_test': 12063, 'token_acc': 0.8051827617161128, 'unseen_share': 0.0716951176989903, 'in_vocab_acc': 0.8573791846814088, 'unseen_acc': 0.1293460264900662, 'sentence_acc': 0.20227140843902844}

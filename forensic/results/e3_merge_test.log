@@ -1,0 +1,16 @@
+10 s | GMM-UBM supervector (dev UBM)                              c400–c500 mean 0.12 (same 0.15, other cross 0.06) | FA from c400–c500 150/496 | EER 0.261 → merged 0.259, Cllr 1.78 → 1.61
+10 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced     c400–c500 mean 0.79 (same 0.83, other cross 0.43) | FA from c400–c500 202/221 | EER 0.116 → merged 0.023, Cllr 0.36 → 0.12
+10 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k      c400–c500 mean 0.74 (same 0.79, other cross 0.47) | FA from c400–c500 173/192 | EER 0.101 → merged 0.032, Cllr 0.44 → 0.14
+10 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k     c400–c500 mean 0.69 (same 0.77, other cross 0.45) | FA from c400–c500 166/179 | EER 0.094 → merged 0.039, Cllr 0.31 → 0.21
+10 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common            c400–c500 mean 0.90 (same 0.92, other cross 0.76) | FA from c400–c500 180/197 | EER 0.104 → merged 0.020, Cllr 0.40 → 0.15
+10 s | wespeaker_en_voxceleb_CAM++                                c400–c500 mean 0.86 (same 0.85, other cross 0.64) | FA from c400–c500 214/478 | EER 0.251 → merged 0.201, Cllr 0.77 → 0.63
+10 s | wespeaker_en_voxceleb_resnet34_LM                          c400–c500 mean 0.97 (same 0.96, other cross 0.90) | FA from c400–c500 242/412 | EER 0.216 → merged 0.130, Cllr 0.75 → 0.56
+10 s | wespeaker_zh_cnceleb_resnet34_LM                           c400–c500 mean 0.94 (same 0.94, other cross 0.79) | FA from c400–c500 251/288 | EER 0.151 → merged 0.040, Cllr 0.49 → 0.19
+3 s | GMM-UBM supervector (dev UBM)                              c400–c500 mean 0.04 (same 0.06, other cross 0.02) | FA from c400–c500 1626/8253 | EER 0.381 → merged 0.383, Cllr 1.06 → 1.05
+3 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced     c400–c500 mean 0.61 (same 0.64, other cross 0.37) | FA from c400–c500 2401/3620 | EER 0.167 → merged 0.109, Cllr 0.55 → 0.38
+3 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k      c400–c500 mean 0.56 (same 0.60, other cross 0.38) | FA from c400–c500 2229/3250 | EER 0.150 → merged 0.108, Cllr 0.53 → 0.39
+3 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k     c400–c500 mean 0.50 (same 0.58, other cross 0.37) | FA from c400–c500 1748/3573 | EER 0.165 → merged 0.162, Cllr 0.55 → 0.56
+3 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common            c400–c500 mean 0.81 (same 0.82, other cross 0.68) | FA from c400–c500 2397/3434 | EER 0.158 → merged 0.102, Cllr 0.62 → 0.42
+3 s | wespeaker_en_voxceleb_CAM++                                c400–c500 mean 0.83 (same 0.85, other cross 0.80) | FA from c400–c500 1563/8769 | EER 0.404 → merged 0.410, Cllr 0.98 → 0.98
+3 s | wespeaker_en_voxceleb_resnet34_LM                          c400–c500 mean 0.93 (same 0.91, other cross 0.86) | FA from c400–c500 2630/7261 | EER 0.335 → merged 0.262, Cllr 0.98 → 0.85
+3 s | wespeaker_zh_cnceleb_resnet34_LM                           c400–c500 mean 0.86 (same 0.85, other cross 0.72) | FA from c400–c500 2724/4532 | EER 0.209 → merged 0.133, Cllr 0.67 → 0.46

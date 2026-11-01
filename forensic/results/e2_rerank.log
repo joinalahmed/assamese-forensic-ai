@@ -1,0 +1,36 @@
+building large LM
+  IndicCorp: 66.5M tokens (141s)
+  total 112.7M tokens, vocab 3956243, bigrams 35.3M (248s)
+in-domain LMs: 560564 tokens
+neural beam-5 for 27001 tokens (104s)
+oracle candidate recall: {'oracle_recall_dev': 0.9996931843085689, 'oracle_recall_test': 0.9648127128263337}
+  dev order=2 lam=0.2 mu=1.0 nu=0.0: token 0.8836 sent 0.3320
+  dev order=2 lam=0.2 mu=0.7 nu=0.0: token 0.8845 sent 0.3330
+  dev order=2 lam=0.2 mu=0.4 nu=0.0: token 0.8848 sent 0.3330
+  dev order=2 lam=0.35 mu=1.0 nu=0.0: token 0.8820 sent 0.3370
+  dev order=2 lam=0.35 mu=0.7 nu=0.0: token 0.8827 sent 0.3320
+  dev order=2 lam=0.35 mu=0.4 nu=0.0: token 0.8833 sent 0.3290
+  dev order=2 lam=0.5 mu=1.0 nu=0.0: token 0.8782 sent 0.3240
+  dev order=2 lam=0.5 mu=0.7 nu=0.0: token 0.8806 sent 0.3270
+  dev order=2 lam=0.5 mu=0.4 nu=0.0: token 0.8794 sent 0.3210
+  dev order=3 lam=0.2 mu=1.0 nu=0.3: token 0.8840 sent 0.3390
+  dev order=3 lam=0.2 mu=1.0 nu=0.6: token 0.8840 sent 0.3410
+  dev order=3 lam=0.2 mu=0.7 nu=0.3: token 0.8851 sent 0.3390
+  dev order=3 lam=0.2 mu=0.7 nu=0.6: token 0.8850 sent 0.3420
+  dev order=3 lam=0.2 mu=0.4 nu=0.3: token 0.8847 sent 0.3370
+  dev order=3 lam=0.2 mu=0.4 nu=0.6: token 0.8849 sent 0.3390
+  dev order=3 lam=0.35 mu=1.0 nu=0.3: token 0.8821 sent 0.3380
+  dev order=3 lam=0.35 mu=1.0 nu=0.6: token 0.8815 sent 0.3400
+  dev order=3 lam=0.35 mu=0.7 nu=0.3: token 0.8826 sent 0.3360
+  dev order=3 lam=0.35 mu=0.7 nu=0.6: token 0.8818 sent 0.3380
+  dev order=3 lam=0.35 mu=0.4 nu=0.3: token 0.8830 sent 0.3330
+  dev order=3 lam=0.35 mu=0.4 nu=0.6: token 0.8819 sent 0.3370
+  dev order=3 lam=0.5 mu=1.0 nu=0.3: token 0.8774 sent 0.3240
+  dev order=3 lam=0.5 mu=1.0 nu=0.6: token 0.8769 sent 0.3230
+  dev order=3 lam=0.5 mu=0.7 nu=0.3: token 0.8787 sent 0.3220
+  dev order=3 lam=0.5 mu=0.7 nu=0.6: token 0.8784 sent 0.3180
+  dev order=3 lam=0.5 mu=0.4 nu=0.3: token 0.8787 sent 0.3190
+  dev order=3 lam=0.5 mu=0.4 nu=0.6: token 0.8785 sent 0.3200
+best dev config: order=3 lam=0.2 mu=0.7 nu=0.3
+TEST in-domain bigram only (lam=0.2, mu=1): token 0.8384 sentence 0.2574
+TEST best: token 0.8407 sentence 0.2605

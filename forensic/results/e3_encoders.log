@@ -1,0 +1,50 @@
+10 s  3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced: dev-speaker EER 0.025
+10 s  3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k: dev-speaker EER 0.025
+10 s  3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k: dev-speaker EER 0.040
+10 s  3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common: dev-speaker EER 0.034
+10 s  wespeaker_en_voxceleb_CAM++: dev-speaker EER 0.146
+10 s  wespeaker_en_voxceleb_resnet34_LM: dev-speaker EER 0.158
+10 s  wespeaker_zh_cnceleb_resnet34_LM: dev-speaker EER 0.053
+  10 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced               6→4: EER 0.116 Cllr 0.36 min 0.31  4→6: EER 0.025 Cllr 0.16 min 0.08
+  10 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced + S-norm      6→4: EER 0.104 Cllr 0.38 min 0.27  4→6: EER 0.019 Cllr 0.08 min 0.05
+  10 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k                6→4: EER 0.101 Cllr 0.44 min 0.30  4→6: EER 0.025 Cllr 0.11 min 0.06
+  10 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k + S-norm       6→4: EER 0.113 Cllr 0.76 min 0.34  4→6: EER 0.034 Cllr 0.11 min 0.09
+  10 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common                      6→4: EER 0.104 Cllr 0.40 min 0.31  4→6: EER 0.034 Cllr 0.24 min 0.13
+  10 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common + S-norm             6→4: EER 0.084 Cllr 0.27 min 0.25  4→6: EER 0.031 Cllr 0.16 min 0.10
+  10 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k               6→4: EER 0.094 Cllr 0.31 min 0.28  4→6: EER 0.040 Cllr 0.17 min 0.15
+  10 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k + S-norm      6→4: EER 0.133 Cllr 0.47 min 0.34  4→6: EER 0.053 Cllr 0.18 min 0.15
+  10 s | wespeaker_zh_cnceleb_resnet34_LM                                     6→4: EER 0.151 Cllr 0.49 min 0.40  4→6: EER 0.053 Cllr 0.26 min 0.15
+  10 s | wespeaker_zh_cnceleb_resnet34_LM + S-norm                            6→4: EER 0.103 Cllr 0.31 min 0.28  4→6: EER 0.043 Cllr 0.18 min 0.14
+  10 s | wespeaker_en_voxceleb_CAM++                                          6→4: EER 0.251 Cllr 0.77 min 0.73  4→6: EER 0.146 Cllr 0.59 min 0.48
+  10 s | wespeaker_en_voxceleb_CAM++ + S-norm                                 6→4: EER 0.211 Cllr 0.70 min 0.65  4→6: EER 0.118 Cllr 0.53 min 0.42
+  10 s | wespeaker_en_voxceleb_resnet34_LM                                    6→4: EER 0.216 Cllr 0.75 min 0.60  4→6: EER 0.158 Cllr 0.61 min 0.46
+  10 s | wespeaker_en_voxceleb_resnet34_LM + S-norm                           6→4: EER 0.162 Cllr 0.50 min 0.48  4→6: EER 0.105 Cllr 0.55 min 0.36
+  10 s | fusion top-2 (dev-selected)                                          6→4: EER 0.098 Cllr 0.36 min 0.28  4→6: EER 0.025 Cllr 0.12 min 0.07
+  10 s | fusion top-2 (dev-selected) + S-norm                                 6→4: EER 0.094 Cllr 0.46 min 0.27  4→6: EER 0.025 Cllr 0.08 min 0.06
+  10 s | fusion top-3 (dev-selected)                                          6→4: EER 0.097 Cllr 0.36 min 0.28  4→6: EER 0.025 Cllr 0.14 min 0.08
+  10 s | fusion top-3 (dev-selected) + S-norm                                 6→4: EER 0.090 Cllr 0.32 min 0.26  4→6: EER 0.025 Cllr 0.08 min 0.06
+3 s  3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced: dev-speaker EER 0.086
+3 s  3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k: dev-speaker EER 0.083
+3 s  3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k: dev-speaker EER 0.098
+3 s  3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common: dev-speaker EER 0.085
+3 s  wespeaker_en_voxceleb_CAM++: dev-speaker EER 0.329
+3 s  wespeaker_en_voxceleb_resnet34_LM: dev-speaker EER 0.237
+3 s  wespeaker_zh_cnceleb_resnet34_LM: dev-speaker EER 0.116
+  3 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k                 6→4: EER 0.146 Cllr 0.52 min 0.50  4→6: EER 0.082 Cllr 0.36 min 0.32
+  3 s | 3dspeaker_speech_eres2net_base_sv_zh-cn_3dspeaker_16k + S-norm        6→4: EER 0.142 Cllr 0.54 min 0.48  4→6: EER 0.079 Cllr 0.36 min 0.29
+  3 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common                       6→4: EER 0.158 Cllr 0.62 min 0.52  4→6: EER 0.085 Cllr 0.37 min 0.31
+  3 s | 3dspeaker_speech_eres2netv2_sv_zh-cn_16k-common + S-norm              6→4: EER 0.131 Cllr 0.46 min 0.44  4→6: EER 0.072 Cllr 0.32 min 0.25
+  3 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced                6→4: EER 0.167 Cllr 0.55 min 0.52  4→6: EER 0.085 Cllr 0.33 min 0.31
+  3 s | 3dspeaker_speech_campplus_sv_zh_en_16k-common_advanced + S-norm       6→4: EER 0.140 Cllr 0.52 min 0.46  4→6: EER 0.068 Cllr 0.28 min 0.25
+  3 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k                6→4: EER 0.164 Cllr 0.55 min 0.54  4→6: EER 0.098 Cllr 0.40 min 0.36
+  3 s | 3dspeaker_speech_eres2net_large_sv_zh-cn_3dspeaker_16k + S-norm       6→4: EER 0.159 Cllr 0.63 min 0.53  4→6: EER 0.086 Cllr 0.37 min 0.31
+  3 s | wespeaker_zh_cnceleb_resnet34_LM                                      6→4: EER 0.208 Cllr 0.66 min 0.63  4→6: EER 0.116 Cllr 0.42 min 0.39
+  3 s | wespeaker_zh_cnceleb_resnet34_LM + S-norm                             6→4: EER 0.162 Cllr 0.58 min 0.52  4→6: EER 0.078 Cllr 0.36 min 0.28
+  3 s | wespeaker_en_voxceleb_resnet34_LM                                     6→4: EER 0.335 Cllr 0.98 min 0.87  4→6: EER 0.237 Cllr 0.79 min 0.71
+  3 s | wespeaker_en_voxceleb_resnet34_LM + S-norm                            6→4: EER 0.272 Cllr 0.81 min 0.77  4→6: EER 0.185 Cllr 0.76 min 0.59
+  3 s | wespeaker_en_voxceleb_CAM++                                           6→4: EER 0.406 Cllr 0.98 min 0.95  4→6: EER 0.332 Cllr 0.87 min 0.84
+  3 s | wespeaker_en_voxceleb_CAM++ + S-norm                                  6→4: EER 0.400 Cllr 1.01 min 0.94  4→6: EER 0.311 Cllr 0.85 min 0.81
+  3 s | fusion top-2 (dev-selected)                                           6→4: EER 0.136 Cllr 0.53 min 0.46  4→6: EER 0.067 Cllr 0.30 min 0.25
+  3 s | fusion top-2 (dev-selected) + S-norm                                  6→4: EER 0.121 Cllr 0.44 min 0.41  4→6: EER 0.066 Cllr 0.31 min 0.24
+  3 s | fusion top-3 (dev-selected)                                           6→4: EER 0.127 Cllr 0.47 min 0.42  4→6: EER 0.063 Cllr 0.27 min 0.23
+  3 s | fusion top-3 (dev-selected) + S-norm                                  6→4: EER 0.118 Cllr 0.41 min 0.38  4→6: EER 0.059 Cllr 0.29 min 0.21

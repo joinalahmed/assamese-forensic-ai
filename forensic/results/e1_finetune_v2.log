@@ -1,0 +1,76 @@
+device mps  model ../data/new/models/IndicBERTv2-MLM-only  eval editors 150  train editors 466 (25732 sessions)  poets 90
+fine-tuning 3000 steps (P=16 editors x K=2 sessions):
+  warm-up forward ok
+  step 50/3000 loss 3.191 (30s)
+  step 100/3000 loss 2.983 (61s)
+  step 150/3000 loss 2.735 (92s)
+  step 200/3000 loss 2.602 (123s)
+  step 250/3000 loss 2.484 (155s)
+  step 300/3000 loss 2.361 (189s)
+  step 350/3000 loss 2.340 (227s)
+  step 400/3000 loss 2.231 (277s)
+  step 450/3000 loss 2.089 (323s)
+  step 500/3000 loss 2.033 (369s)
+  step 550/3000 loss 1.933 (415s)
+  step 600/3000 loss 1.870 (459s)
+  step 650/3000 loss 1.856 (503s)
+  step 700/3000 loss 1.813 (547s)
+  step 750/3000 loss 1.735 (590s)
+  step 800/3000 loss 1.656 (634s)
+  step 850/3000 loss 1.627 (677s)
+  step 900/3000 loss 1.641 (720s)
+  step 950/3000 loss 1.524 (763s)
+  step 1000/3000 loss 1.521 (807s)
+  step 1050/3000 loss 1.492 (850s)
+  step 1100/3000 loss 1.518 (893s)
+  step 1150/3000 loss 1.514 (937s)
+  step 1200/3000 loss 1.486 (981s)
+  step 1250/3000 loss 1.459 (1024s)
+  step 1300/3000 loss 1.402 (1068s)
+  step 1350/3000 loss 1.370 (1111s)
+  step 1400/3000 loss 1.325 (1155s)
+  step 1450/3000 loss 1.352 (1199s)
+  step 1500/3000 loss 1.314 (1243s)
+  step 1550/3000 loss 1.305 (1287s)
+  step 1600/3000 loss 1.344 (1332s)
+  step 1650/3000 loss 1.236 (1376s)
+  step 1700/3000 loss 1.291 (1420s)
+  step 1750/3000 loss 1.255 (1464s)
+  step 1800/3000 loss 1.182 (1509s)
+  step 1850/3000 loss 1.203 (1553s)
+  step 1900/3000 loss 1.116 (1597s)
+  step 1950/3000 loss 1.203 (1642s)
+  step 2000/3000 loss 1.183 (1686s)
+  step 2050/3000 loss 1.104 (1731s)
+  step 2100/3000 loss 1.100 (1776s)
+  step 2150/3000 loss 1.191 (1820s)
+  step 2200/3000 loss 1.197 (1865s)
+  step 2250/3000 loss 1.102 (1909s)
+  step 2300/3000 loss 1.157 (1952s)
+  step 2350/3000 loss 1.169 (1994s)
+  step 2400/3000 loss 1.202 (2035s)
+  step 2450/3000 loss 1.058 (2075s)
+  step 2500/3000 loss 1.170 (2114s)
+  step 2550/3000 loss 1.049 (2153s)
+  step 2600/3000 loss 1.108 (2194s)
+  step 2650/3000 loss 1.132 (2233s)
+  step 2700/3000 loss 1.099 (2272s)
+  step 2750/3000 loss 1.125 (2311s)
+  step 2800/3000 loss 1.074 (2351s)
+  step 2850/3000 loss 1.074 (2392s)
+  step 2900/3000 loss 1.116 (2433s)
+  step 2950/3000 loss 1.123 (2480s)
+  step 3000/3000 loss 1.087 (2529s)
+fine-tuned:
+  indicbert_v2 fine-tuned | query 75 words | cosine                                          1028/76072  EER 0.178  Cllr 0.570  Cllr_min 0.542
+  indicbert_v2 fine-tuned | query 75 words | cosine + S-norm                                 1028/76072  EER 0.167  Cllr 0.542  Cllr_min 0.517
+  indicbert_v2 fine-tuned | query 75 words | fusion neural S-norm + TF-IDF S-norm            1028/76072  EER 0.160  Cllr 0.522  Cllr_min 0.494
+  indicbert_v2 fine-tuned | query full | cosine                                              1028/76072  EER 0.183  Cllr 0.585  Cllr_min 0.561
+  indicbert_v2 fine-tuned | query full | cosine + S-norm                                     1028/76072  EER 0.162  Cllr 0.522  Cllr_min 0.499
+  indicbert_v2 fine-tuned | query full | fusion neural S-norm + TF-IDF S-norm                1028/76072  EER 0.147  Cllr 0.480  Cllr_min 0.457
+  indicbert_v2 fine-tuned poets (transfer) | query 75 words | cosine                         732/32208  EER 0.255  Cllr 0.743  Cllr_min 0.712
+  indicbert_v2 fine-tuned poets (transfer) | query 75 words | cosine + S-norm                732/32208  EER 0.197  Cllr 0.606  Cllr_min 0.585
+  indicbert_v2 fine-tuned poets (transfer) | query 75 words | fusion neural S-norm + TF-IDF S-norm 732/32208  EER 0.164  Cllr 0.536  Cllr_min 0.513
+  indicbert_v2 fine-tuned poets (transfer) | query full | cosine                             732/32208  EER 0.228  Cllr 0.711  Cllr_min 0.680
+  indicbert_v2 fine-tuned poets (transfer) | query full | cosine + S-norm                    732/32208  EER 0.187  Cllr 0.572  Cllr_min 0.551
+  indicbert_v2 fine-tuned poets (transfer) | query full | fusion neural S-norm + TF-IDF S-norm 732/32208  EER 0.145  Cllr 0.464  Cllr_min 0.442

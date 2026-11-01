@@ -1,0 +1,6 @@
+  cosine, char only (paper)              732/32208  EER 0.244  Cllr 0.765  Cllr_min 0.695
+  cosine, fused                          732/32208  EER 0.218  Cllr 0.670  Cllr_min 0.621
+  cosine, fused, S-norm                  732/32208  EER 0.143  Cllr 0.507  Cllr_min 0.468
+  author SVM vs impostors, fused         732/32208  EER 0.119  Cllr 0.455  Cllr_min 0.385
+  author SVM, fused, S-norm              732/32208  EER 0.111  Cllr 0.531  Cllr_min 0.360
+  fusion: cosine S-norm + SVM S-norm     732/32208  EER 0.108  Cllr 0.433  Cllr_min 0.377

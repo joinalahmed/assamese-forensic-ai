@@ -1,0 +1,105 @@
+{
+ "raw | char | train wiki → test cc": {
+  "acc": 0.756837246240135,
+  "auc": 0.9193343283229982,
+  "flagged": 0.296121830031619
+ },
+ "raw | char | train cc → test wiki": {
+  "acc": 0.805033007395642,
+  "auc": 0.9544055908150102,
+  "flagged": 0.23811060205201007
+ },
+ "raw | fused | train wiki → test cc": {
+  "acc": 0.7615029532932943,
+  "auc": 0.9270140942992088,
+  "flagged": 0.2939278570045815
+ },
+ "raw | fused | train cc → test wiki": {
+  "acc": 0.8288578944756043,
+  "auc": 0.9636068583513562,
+  "flagged": 0.20926630960831127
+ },
+ "raw | fused+lm | train wiki → test cc": {
+  "acc": 0.7042735891199682,
+  "auc": 0.9038530384999941,
+  "flagged": 0.37549203071562237
+ },
+ "raw | fused+lm | train cc → test wiki": {
+  "acc": 0.8742244502903658,
+  "auc": 0.9846823075711498,
+  "flagged": 0.1572562431438343
+ },
+ "raw | char | train wiki+cc → test wiki+cc": {
+  "acc": 0.9509677419354838,
+  "auc": 0.9894194704590126,
+  "flagged": 0.023225806451612905
+ },
+ "raw | fused+lm | train wiki+cc → test wiki+cc": {
+  "acc": 0.9766308243727598,
+  "auc": 0.9962470343392299,
+  "flagged": 0.016666666666666666
+ },
+ "script-normalised | char | train wiki → test cc": {
+  "acc": 0.8063235221124733,
+  "auc": 0.9352733411461531,
+  "flagged": 0.22765696586436085
+ },
+ "script-normalised | char | train cc → test wiki": {
+  "acc": 0.8300987740110191,
+  "auc": 0.9585797181695243,
+  "flagged": 0.20449119184358264
+ },
+ "script-normalised | fused | train wiki → test cc": {
+  "acc": 0.7994738670769842,
+  "auc": 0.9358438712730386,
+  "flagged": 0.24165967606633543
+ },
+ "script-normalised | fused | train cc → test wiki": {
+  "acc": 0.8453367747059115,
+  "auc": 0.9649213548789533,
+  "flagged": 0.18558430663999484
+ },
+ "script-normalised | fused+lm | train wiki → test cc": {
+  "acc": 0.77262123393061,
+  "auc": 0.9394760137411263,
+  "flagged": 0.28579725108085435
+ },
+ "script-normalised | fused+lm | train cc → test wiki": {
+  "acc": 0.8826127959497692,
+  "auc": 0.9842712949644781,
+  "flagged": 0.14538297735045494
+ },
+ "script-normalised | char | train wiki+cc → test wiki+cc": {
+  "acc": 0.9481720430107526,
+  "auc": 0.9878064978610244,
+  "flagged": 0.024193548387096774
+ },
+ "script-normalised | fused+lm | train wiki+cc → test wiki+cc": {
+  "acc": 0.973763440860215,
+  "auc": 0.9957225575211006,
+  "flagged": 0.01903225806451613
+ },
+ "calibrated_cross_genre": {
+  "config": "script-normalised | fused+lm | train cc → test wiki",
+  "folds": {
+   "train wiki → test cc": {
+    "n_ss": 4650,
+    "n_ds": 15497,
+    "eer": 0.1361744728948579,
+    "cllr": 0.8395718293165552,
+    "cllr_min": 0.45766068184043185,
+    "misleading_ss": 0.007526881720430108,
+    "misleading_ds": 0.1569336000516229
+   },
+   "train cc → test wiki": {
+    "n_ss": 4650,
+    "n_ds": 15497,
+    "eer": 0.06951210813608738,
+    "cllr": 0.35606961789554153,
+    "cllr_min": 0.25643506430307345,
+    "misleading_ss": 0.006236559139784947,
+    "misleading_ds": 0.04407304639607666
+   }
+  }
+ }
+}

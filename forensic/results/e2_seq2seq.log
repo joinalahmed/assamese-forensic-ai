@@ -1,0 +1,48 @@
+device mps  train 46251  dev 2000  test 12063  params 17.2M  src vocab 536 tgt vocab 442
+667 batches/epoch
+epoch 1/30 loss 3.538  (120s)
+epoch 2/30 loss 2.669  (237s)
+epoch 3/30 loss 2.300  dev token acc 0.1841  sentence acc 0.0067  (453s)
+epoch 4/30 loss 2.046  (567s)
+epoch 5/30 loss 1.932  (679s)
+epoch 6/30 loss 1.836  dev token acc 0.2237  sentence acc 0.0300  (855s)
+epoch 7/30 loss 1.722  (965s)
+epoch 8/30 loss 1.646  (1075s)
+epoch 9/30 loss 1.571  dev token acc 0.3158  sentence acc 0.0367  (1278s)
+epoch 10/30 loss 1.515  (1389s)
+epoch 11/30 loss 1.481  (1498s)
+epoch 12/30 loss 1.422  dev token acc 0.4392  sentence acc 0.0900  (1701s)
+epoch 13/30 loss 1.375  (1813s)
+epoch 14/30 loss 1.351  (1923s)
+epoch 15/30 loss 1.322  dev token acc 0.4928  sentence acc 0.1167  (2126s)
+epoch 16/30 loss 1.291  (2236s)
+epoch 17/30 loss 1.268  (2346s)
+epoch 18/30 loss 1.247  dev token acc 0.5486  sentence acc 0.1667  (2544s)
+epoch 19/30 loss 1.227  (2654s)
+epoch 20/30 loss 1.209  (2764s)
+epoch 21/30 loss 1.193  dev token acc 0.6047  sentence acc 0.1733  (2966s)
+epoch 22/30 loss 1.180  (3077s)
+epoch 23/30 loss 1.169  (3187s)
+epoch 24/30 loss 1.158  dev token acc 0.6559  sentence acc 0.1933  (3390s)
+epoch 25/30 loss 1.150  (3503s)
+epoch 26/30 loss 1.144  (3613s)
+epoch 27/30 loss 1.138  dev token acc 0.6614  sentence acc 0.2067  (3816s)
+epoch 28/30 loss 1.134  (3927s)
+epoch 29/30 loss 1.132  (4037s)
+epoch 30/30 loss 1.131  dev token acc 0.6736  sentence acc 0.2100  (4241s)
+TEST {'test_token_acc': 0.6736699977001773, 'test_sentence_acc': 0.18743264527895218, 'in_vocab_acc': 0.7038856275707839, 'unseen_acc': 0.27909887359199, 'best_dev_token_acc': 0.6735751295336787, 'config': {'D': 384, 'LAYERS': 4, 'EPOCHS': 30, 'BATCH_CHARS': 5000}}
+ ROMAN: dada thar lo tukreswari debaloi t ahbo 
+  REF : দাদা thar লৈ tukreswari দেৱাল ত আহিব 
+  HYP : দাদা thar ল টোকৰেশ্বৰী দিবলৈ ত আহিব
+ ROMAN: papu borgohain unity bonai soliba bibekery kam koriba voi namor word tu pahori juwa 
+  REF : পাপু বৰগোহাই unity বনাই চলিবা বিবেকেৰে কাম কৰিবা ভয় নামৰ word টো পাহৰি যোৱা 
+  HYP : পাপু বৰঘাইন উন্নিত বনাই চলিবা বিক্ৰী কাম কৰিবা ভয় নামৰ word টো পাহৰি যোৱা
+ ROMAN: dim dimpu daa 
+  REF : দিম দিম্পু দা 
+  HYP : দিম দিম্পু দা
+ ROMAN: dimpu da agote gompale moi ghorotehi thakigoluhoi moi vohut miss koriasu appunak ghorote thakile log korlu hoi 
+  REF : ডিম্পু দা আগতে গমপালে মই ঘৰতেহি থাকিগ'লোহয় মই বহুত miss কৰিআছো আপোনাক ঘৰতে থাকিলে লগ কৰিলো হয় 
+  HYP : দিম্পু দা আগতে গমপালে মই ঘৰতে থাকিগলোহৈ মই ভোট মিছা কৰিছো আপোনাক ঘৰতে থাকিলে লগ কৰিলো হয়
+ ROMAN: nlbarir pra mohamya mndir nib cn 
+  REF : নলবাৰীৰ পৰা মহামায়া মন্দিৰ নিব চোন 
+  HYP : নলবাৰীৰ পৰা মহামেই মন্দিৰ নিব চোন

@@ -1,0 +1,20 @@
+# environments
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+nohup.out
+
+# data and models: re-fetch with forensic/get_data.sh and data/new/download_hf.py / download_models.py
+data/*
+!data/new/
+data/new/*
+!data/new/INVENTORY.md
+!data/new/download_hf.py
+!data/new/download_models.py
+models/
+
+# large result artefacts (checkpoints, caches); JSON results, logs and figures are kept
+forensic/results/*.pt
+forensic/results/*.pkl
+forensic/results/*.bin

@@ -1,0 +1,10 @@
+  char1-4+word / LinearSVC (baseline best)                   0.781 ± 0.056  F1 0.721
+  fused char+word+punct / LinearSVC                          0.806 ± 0.028  F1 0.761
+  fused / LinearSVC C=0.3                                    0.792 ± 0.032  F1 0.742
+  fused / LinearSVC C=3                                      0.823 ± 0.028  F1 0.777
+  fused / LogReg C=50                                        0.778 ± 0.030  F1 0.726
+  fused, original layout + ws-normalised copy / LinearSVC    0.809 ± 0.025  F1 0.760
+pairwise verification:
+  pairwise, char (paper)         4683/24000  EER 0.364  Cllr 0.924  Cllr_min 0.887
+  pairwise, fused                4683/24000  EER 0.296  Cllr 0.832  Cllr_min 0.805
+  pairwise, fused, S-norm        4683/24000  EER 0.264  Cllr 0.766  Cllr_min 0.746

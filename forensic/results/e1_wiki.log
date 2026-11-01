@@ -1,0 +1,18 @@
+all namespaces: 616 editors with ≥3 sessions of ≥40 words; 32389 sessions, median 349 words
+  questioned truncated to 75 words
+    cosine fused               1028/76072  EER 0.265  Cllr 0.758  Cllr_min 0.719
+    cosine fused + S-norm      1028/76072  EER 0.223  Cllr 0.646  Cllr_min 0.612
+    author SVM vs impostors    1028/76072  EER 0.198  Cllr 0.614  Cllr_min 0.558
+  questioned full session
+    cosine fused               1028/76072  EER 0.230  Cllr 0.691  Cllr_min 0.642
+    cosine fused + S-norm      1028/76072  EER 0.177  Cllr 0.574  Cllr_min 0.525
+    author SVM vs impostors    1028/76072  EER 0.158  Cllr 0.530  Cllr_min 0.473
+talk/user namespaces: 202 editors with ≥3 sessions of ≥40 words; 7663 sessions, median 400 words
+  questioned truncated to 75 words
+    cosine fused               1083/80142  EER 0.283  Cllr 0.807  Cllr_min 0.779
+    cosine fused + S-norm      1083/80142  EER 0.260  Cllr 0.726  Cllr_min 0.695
+    author SVM vs impostors    1083/80142  EER 0.221  Cllr 0.691  Cllr_min 0.613
+  questioned full session
+    cosine fused               1083/80142  EER 0.237  Cllr 0.724  Cllr_min 0.684
+    cosine fused + S-norm      1083/80142  EER 0.185  Cllr 0.593  Cllr_min 0.552
+    author SVM vs impostors    1083/80142  EER 0.140  Cllr 0.534  Cllr_min 0.442

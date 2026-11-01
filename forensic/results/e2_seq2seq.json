@@ -1,0 +1,14 @@
+{
+ "test_token_acc": 0.6736699977001773,
+ "test_sentence_acc": 0.18743264527895218,
+ "in_vocab_acc": 0.7038856275707839,
+ "unseen_acc": 0.27909887359199,
+ "best_dev_token_acc": 0.6735751295336787,
+ "history": [],
+ "config": {
+  "D": 384,
+  "LAYERS": 4,
+  "EPOCHS": 30,
+  "BATCH_CHARS": 5000
+ }
+}

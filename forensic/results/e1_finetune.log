@@ -1,0 +1,50 @@
+device mps  model ../data/new/models/IndicBERTv2-MLM-only  eval editors 150  train editors 466 (25732 sessions)  poets 90
+zero-shot:
+  indicbert zero-shot | query 75 words | cosine                          1028/76072  EER 0.280  Cllr 0.836  Cllr_min 0.772
+  indicbert zero-shot | query 75 words | cosine + S-norm                 1028/76072  EER 0.221  Cllr 0.698  Cllr_min 0.652
+  indicbert zero-shot | query full | cosine                              1028/76072  EER 0.287  Cllr 0.849  Cllr_min 0.773
+  indicbert zero-shot | query full | cosine + S-norm                     1028/76072  EER 0.228  Cllr 0.703  Cllr_min 0.652
+  indicbert zero-shot poets | query 75 words | cosine                    732/32208  EER 0.298  Cllr 0.857  Cllr_min 0.808
+  indicbert zero-shot poets | query 75 words | cosine + S-norm           732/32208  EER 0.216  Cllr 0.668  Cllr_min 0.627
+  indicbert zero-shot poets | query full | cosine                        732/32208  EER 0.297  Cllr 0.852  Cllr_min 0.800
+  indicbert zero-shot poets | query full | cosine + S-norm               732/32208  EER 0.206  Cllr 0.653  Cllr_min 0.611
+fine-tuning 1500 steps (P=16 editors x K=2 sessions):
+  step 50/1500 loss 3.167 (44s)
+  step 100/1500 loss 2.854 (79s)
+  step 150/1500 loss 2.592 (117s)
+  step 200/1500 loss 2.464 (185s)
+  step 250/1500 loss 2.311 (264s)
+  step 300/1500 loss 2.194 (336s)
+  step 350/1500 loss 2.155 (400s)
+  step 400/1500 loss 2.060 (464s)
+  step 450/1500 loss 1.931 (528s)
+  step 500/1500 loss 1.880 (594s)
+  step 550/1500 loss 1.802 (656s)
+  step 600/1500 loss 1.761 (720s)
+  step 650/1500 loss 1.751 (785s)
+  step 700/1500 loss 1.717 (849s)
+  step 750/1500 loss 1.675 (918s)
+  step 800/1500 loss 1.590 (987s)
+  step 850/1500 loss 1.581 (1052s)
+  step 900/1500 loss 1.620 (1117s)
+  step 950/1500 loss 1.518 (1189s)
+  step 1000/1500 loss 1.531 (1255s)
+  step 1050/1500 loss 1.503 (1323s)
+  step 1100/1500 loss 1.537 (1389s)
+  step 1150/1500 loss 1.542 (1456s)
+  step 1200/1500 loss 1.538 (1528s)
+  step 1250/1500 loss 1.509 (1586s)
+  step 1300/1500 loss 1.475 (1634s)
+  step 1350/1500 loss 1.467 (1681s)
+  step 1400/1500 loss 1.437 (1728s)
+  step 1450/1500 loss 1.502 (1774s)
+  step 1500/1500 loss 1.478 (1833s)
+fine-tuned:
+  indicbert fine-tuned | query 75 words | cosine                         1028/76072  EER 0.170  Cllr 0.552  Cllr_min 0.523
+  indicbert fine-tuned | query 75 words | cosine + S-norm                1028/76072  EER 0.162  Cllr 0.532  Cllr_min 0.509
+  indicbert fine-tuned | query full | cosine                             1028/76072  EER 0.160  Cllr 0.533  Cllr_min 0.504
+  indicbert fine-tuned | query full | cosine + S-norm                    1028/76072  EER 0.154  Cllr 0.513  Cllr_min 0.487
+  indicbert fine-tuned poets (transfer) | query 75 words | cosine        732/32208  EER 0.261  Cllr 0.757  Cllr_min 0.722
+  indicbert fine-tuned poets (transfer) | query 75 words | cosine + S-norm 732/32208  EER 0.195  Cllr 0.597  Cllr_min 0.575
+  indicbert fine-tuned poets (transfer) | query full | cosine            732/32208  EER 0.239  Cllr 0.726  Cllr_min 0.689
+  indicbert fine-tuned poets (transfer) | query full | cosine + S-norm   732/32208  EER 0.179  Cllr 0.562  Cllr_min 0.540

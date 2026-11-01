@@ -1,0 +1,8 @@
+numpy
+scipy
+scikit-learn
+matplotlib
+soundfile
+# optional, for the "+" experiments
+sherpa-onnx   # pretrained speaker encoders (E3+)
+torch         # character transformer transliterator (E2 neural)

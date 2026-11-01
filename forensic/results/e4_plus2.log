@@ -1,0 +1,14 @@
+  train wiki → test cc | char (script-norm) C=1               acc 0.806  AUC 0.935  flagged 0.228
+  train wiki → test cc | char (script-norm) C=0.05            acc 0.833  AUC 0.883  flagged 0.147
+  train wiki → test cc | style-only view C=1                  acc 0.856  AUC 0.931  flagged 0.145
+  train wiki → test cc | char-LM perplexity only              acc 0.782  AUC 0.936  flagged 0.271
+  train wiki → test cc | fusion z: char + style               acc 0.801  AUC 0.954  flagged 0.245
+  train wiki → test cc | fusion z: char + style + LM          acc 0.805  AUC 0.966  flagged 0.245
+  train wiki → test cc | rank-ensemble: char + style + LM     acc 0.757  AUC 0.966  flagged 0.309
+  train cc → test wiki | char (script-norm) C=1               acc 0.830  AUC 0.959  flagged 0.204
+  train cc → test wiki | char (script-norm) C=0.05            acc 0.833  AUC 0.903  flagged 0.160
+  train cc → test wiki | style-only view C=1                  acc 0.712  AUC 0.899  flagged 0.347
+  train cc → test wiki | char-LM perplexity only              acc 0.876  AUC 0.981  flagged 0.154
+  train cc → test wiki | fusion z: char + style               acc 0.777  AUC 0.952  flagged 0.276
+  train cc → test wiki | fusion z: char + style + LM          acc 0.801  AUC 0.977  flagged 0.253
+  train cc → test wiki | rank-ensemble: char + style + LM     acc 0.752  AUC 0.975  flagged 0.318
