@@ -1,0 +1,36 @@
+!! ../data/new/aksharantar/asm_train.json missing — running without Aksharantar
+!! ../data/new/bhasha/bhasha-abhijnaanam.json missing — skipping the external test
+building large LM
+  LM: wiki100k+cc100_head (fallback)
+oracle recall: {'dev_without_aksharantar': 0.9628753013368399, 'dev_with_aksharantar': 0.9628753013368399, 'test_without_aksharantar': 0.9656213601596522, 'test_with_aksharantar': 0.9656213601596522}
+dev lattices: 162262 edge rows, 0.131 positive (4s)
+dev 2-fold logreg: {'token_acc': 0.8450580758273066, 'in_vocab_acc': 0.8710225663299027, 'unseen_acc': 0.5082669932639314, 'unseen_share': 0.07157571772956388, 'sentence_acc': 0.2545, 'n_tokens': 22815, 'n_sentences': 2000} (6s/fold)
+dev 2-fold gbm: {'token_acc': 0.8493534955073416, 'in_vocab_acc': 0.8734774808799924, 'unseen_acc': 0.5364360073484384, 'unseen_share': 0.07157571772956388, 'sentence_acc': 0.2615, 'n_tokens': 22815, 'n_sentences': 2000} (16s/fold)
+dev baseline: {'token_acc': 0.8443129520052597, 'in_vocab_acc': 0.8702672080067982, 'unseen_acc': 0.5076546233925291, 'unseen_share': 0.07157571772956388, 'sentence_acc': 0.255, 'n_tokens': 22815, 'n_sentences': 2000}
+test decoded (253s)
+TEST round7_published (rerank2 NFC, beta=0.05): {'token_acc': 0.849, 'sentence_acc': 0.281}
+TEST round7_lattice_reproduced (Viterbi + em + 0.2*interp bigram, NFC, nodev transformer): {'token_acc': 0.8469653468651933, 'in_vocab_acc': 0.8728016653506568, 'unseen_acc': 0.502868068833652, 'unseen_share': 0.0698404219803699, 'sentence_acc': 0.27273480891983753, 'n_tokens': 134793, 'n_sentences': 12063}
+TEST discriminative_gbm: {'token_acc': 0.8532564747427537, 'in_vocab_acc': 0.8770767034351845, 'unseen_acc': 0.5360101975780752, 'unseen_share': 0.0698404219803699, 'sentence_acc': 0.28326286993285255, 'n_tokens': 134793, 'n_sentences': 12063}
+error classes: {'other': 0.6180990899898888, 'latin_kept_vs_transliterated': 0.26061678463094035, "apostrophe (হল/হ'ল)": 0.0634984833164813, 'vowel_length (ি/ী, ু/ূ)': 0.031294236602628915, 'to (টো/তো)': 0.025530839231547017, 'ya_nukta (য়/য, ড়/ড, ঢ়/ঢ)': 0.0009605662285136501} attested: 0.7710819009100102
+   {'roman': 'dimpu', 'reference': 'dimpu', 'hypothesis': 'দিম্পু', 'count': 564, 'cls': 'latin_kept_vs_transliterated'}
+   {'roman': 'dimpu', 'reference': 'ডিম্পু', 'hypothesis': 'দিম্পু', 'count': 325, 'cls': 'other'}
+   {'roman': 'a', 'reference': 'য়ে', 'hypothesis': 'এ', 'count': 100, 'cls': 'other'}
+   {'roman': 'hol', 'reference': 'হল', 'hypothesis': "হ'ল", 'count': 96, 'cls': "apostrophe (হল/হ'ল)"}
+   {'roman': 'tu', 'reference': 'তো', 'hypothesis': 'টো', 'count': 89, 'cls': 'to (টো/তো)'}
+   {'roman': 'hoi', 'reference': 'হৈ', 'hypothesis': 'হয়', 'count': 87, 'cls': 'other'}
+   {'roman': 'assam', 'reference': 'অসম', 'hypothesis': 'assam', 'count': 83, 'cls': 'latin_kept_vs_transliterated'}
+   {'roman': 'hobo', 'reference': 'হব', 'hypothesis': "হ'ব", 'count': 78, 'cls': "apostrophe (হল/হ'ল)"}
+   {'roman': 'sir', 'reference': 'ছাৰ', 'hypothesis': 'sir', 'count': 77, 'cls': 'latin_kept_vs_transliterated'}
+   {'roman': 'koi', 'reference': 'কয়', 'hypothesis': 'কৈ', 'count': 71, 'cls': 'other'}
+   {'roman': 'bjp', 'reference': 'বিজেপি', 'hypothesis': 'bjp', 'count': 69, 'cls': 'latin_kept_vs_transliterated'}
+   {'roman': 'dimpu', 'reference': 'দিম্পু', 'hypothesis': 'dimpu', 'count': 60, 'cls': 'latin_kept_vs_transliterated'}
+   {'roman': 'nki', 'reference': 'নিকি', 'hypothesis': 'নেকি', 'count': 59, 'cls': 'other'}
+   {'roman': 'asa', 'reference': 'আছা', 'hypothesis': 'আছে', 'count': 59, 'cls': 'other'}
+   {'roman': 'o', 'reference': 'ওঁ', 'hypothesis': 'ও', 'count': 57, 'cls': 'other'}
+   {'roman': 'gol', 'reference': 'গল', 'hypothesis': "গ'ল", 'count': 54, 'cls': "apostrophe (হল/হ'ল)"}
+   {'roman': 'or', 'reference': 'ৰ', 'hypothesis': "অ'ৰ", 'count': 52, 'cls': 'other'}
+   {'roman': 'e', 'reference': 'য়ে', 'hypothesis': 'এ', 'count': 51, 'cls': 'other'}
+   {'roman': 'o', 'reference': 'অ', 'hypothesis': 'ও', 'count': 48, 'cls': 'other'}
+   {'roman': 'na', 'reference': 'নে', 'hypothesis': 'না', 'count': 48, 'cls': 'other'}
+done in 344s
+DISCRIMDONE 0

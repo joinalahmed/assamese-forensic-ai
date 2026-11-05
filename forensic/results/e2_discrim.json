@@ -1,0 +1,288 @@
+{
+ "config": {
+  "ckpt": "results/e2_translit_big_nodev_nfc.pt",
+  "lam": 0.2,
+  "mu": 0.7,
+  "k_seen": 8,
+  "k_aksh": 5,
+  "features": [
+   "direct_lp",
+   "direct_seen",
+   "direct_logcount",
+   "tok_seen",
+   "tok_logcount",
+   "neural_lp_rel",
+   "neural_top_lp",
+   "neural_rank",
+   "neural_in",
+   "copy",
+   "aksh",
+   "aksh_logcount",
+   "latin",
+   "tok_latin_like",
+   "tok_has_digit",
+   "cand_apos",
+   "len_ratio",
+   "log_ncand",
+   "ind_uni",
+   "big_uni",
+   "big_oov",
+   "ind_bi",
+   "big_bi",
+   "lm_interp",
+   "posterior",
+   "on_path",
+   "tok_len"
+  ],
+  "dev_sentences": 2000,
+  "big_lm": "wiki100k+cc100_head (fallback)",
+  "aksharantar_available": false,
+  "bhasha_available": false,
+  "smoke": 0
+ },
+ "oracle_recall": {
+  "dev_without_aksharantar": 0.9628753013368399,
+  "dev_with_aksharantar": 0.9628753013368399,
+  "test_without_aksharantar": 0.9656213601596522,
+  "test_with_aksharantar": 0.9656213601596522
+ },
+ "aksharantar_coverage_of_test_tokens": 0.0,
+ "dev_selection": {
+  "baseline_round7_lattice (dev, decoder refit without dev)": {
+   "token_acc": 0.8443129520052597,
+   "in_vocab_acc": 0.8702672080067982,
+   "unseen_acc": 0.5076546233925291,
+   "unseen_share": 0.07157571772956388,
+   "sentence_acc": 0.255,
+   "n_tokens": 22815,
+   "n_sentences": 2000
+  },
+  "logreg": {
+   "token_acc": 0.8450580758273066,
+   "in_vocab_acc": 0.8710225663299027,
+   "unseen_acc": 0.5082669932639314,
+   "unseen_share": 0.07157571772956388,
+   "sentence_acc": 0.2545,
+   "n_tokens": 22815,
+   "n_sentences": 2000
+  },
+  "gbm": {
+   "token_acc": 0.8493534955073416,
+   "in_vocab_acc": 0.8734774808799924,
+   "unseen_acc": 0.5364360073484384,
+   "unseen_share": 0.07157571772956388,
+   "sentence_acc": 0.2615,
+   "n_tokens": 22815,
+   "n_sentences": 2000
+  }
+ },
+ "selected": "gbm",
+ "gbm_permutation_importance": {
+  "direct_lp": 0.004547991003087018,
+  "direct_seen": 0.0,
+  "direct_logcount": 0.0017659552324276139,
+  "tok_seen": 0.00017128113955658386,
+  "tok_logcount": 0.003895703549229662,
+  "neural_lp_rel": 0.005747588715402725,
+  "neural_top_lp": 0.002773410575478872,
+  "neural_rank": 0.0016408390812344732,
+  "neural_in": 0.0,
+  "copy": 0.005241863705584267,
+  "aksh": 0.0,
+  "aksh_logcount": 0.0,
+  "latin": 0.0017326778549583883,
+  "tok_latin_like": 0.0004462452787498082,
+  "tok_has_digit": -1.8166786336967777e-05,
+  "cand_apos": 5.731267547467075e-05,
+  "len_ratio": 0.0013195589560359617,
+  "log_ncand": 0.0004736966093571021,
+  "ind_uni": 0.005672761390996779,
+  "big_uni": 0.0023982335943600838,
+  "big_oov": 3.0725189983926704e-05,
+  "ind_bi": 0.002839664747054373,
+  "big_bi": 0.004068693144905526,
+  "lm_interp": 0.006383144385417779,
+  "posterior": 0.680521300620398,
+  "on_path": 0.0005806096890979828,
+  "tok_len": 0.0016709595728423658
+ },
+ "test": {
+  "round7_published (rerank2 NFC, beta=0.05)": {
+   "token_acc": 0.849,
+   "sentence_acc": 0.281
+  },
+  "round7_lattice_reproduced (Viterbi + em + 0.2*interp bigram, NFC, nodev transformer)": {
+   "token_acc": 0.8469653468651933,
+   "in_vocab_acc": 0.8728016653506568,
+   "unseen_acc": 0.502868068833652,
+   "unseen_share": 0.0698404219803699,
+   "sentence_acc": 0.27273480891983753,
+   "n_tokens": 134793,
+   "n_sentences": 12063
+  },
+  "discriminative_gbm": {
+   "token_acc": 0.8532564747427537,
+   "in_vocab_acc": 0.8770767034351845,
+   "unseen_acc": 0.5360101975780752,
+   "unseen_share": 0.0698404219803699,
+   "sentence_acc": 0.28326286993285255,
+   "n_tokens": 134793,
+   "n_sentences": 12063
+  }
+ },
+ "errors": {
+  "n_errors": 19780,
+  "top20": [
+   {
+    "roman": "dimpu",
+    "reference": "dimpu",
+    "hypothesis": "দিম্পু",
+    "count": 564,
+    "cls": "latin_kept_vs_transliterated"
+   },
+   {
+    "roman": "dimpu",
+    "reference": "ডিম্পু",
+    "hypothesis": "দিম্পু",
+    "count": 325,
+    "cls": "other"
+   },
+   {
+    "roman": "a",
+    "reference": "য়ে",
+    "hypothesis": "এ",
+    "count": 100,
+    "cls": "other"
+   },
+   {
+    "roman": "hol",
+    "reference": "হল",
+    "hypothesis": "হ'ল",
+    "count": 96,
+    "cls": "apostrophe (হল/হ'ল)"
+   },
+   {
+    "roman": "tu",
+    "reference": "তো",
+    "hypothesis": "টো",
+    "count": 89,
+    "cls": "to (টো/তো)"
+   },
+   {
+    "roman": "hoi",
+    "reference": "হৈ",
+    "hypothesis": "হয়",
+    "count": 87,
+    "cls": "other"
+   },
+   {
+    "roman": "assam",
+    "reference": "অসম",
+    "hypothesis": "assam",
+    "count": 83,
+    "cls": "latin_kept_vs_transliterated"
+   },
+   {
+    "roman": "hobo",
+    "reference": "হব",
+    "hypothesis": "হ'ব",
+    "count": 78,
+    "cls": "apostrophe (হল/হ'ল)"
+   },
+   {
+    "roman": "sir",
+    "reference": "ছাৰ",
+    "hypothesis": "sir",
+    "count": 77,
+    "cls": "latin_kept_vs_transliterated"
+   },
+   {
+    "roman": "koi",
+    "reference": "কয়",
+    "hypothesis": "কৈ",
+    "count": 71,
+    "cls": "other"
+   },
+   {
+    "roman": "bjp",
+    "reference": "বিজেপি",
+    "hypothesis": "bjp",
+    "count": 69,
+    "cls": "latin_kept_vs_transliterated"
+   },
+   {
+    "roman": "dimpu",
+    "reference": "দিম্পু",
+    "hypothesis": "dimpu",
+    "count": 60,
+    "cls": "latin_kept_vs_transliterated"
+   },
+   {
+    "roman": "nki",
+    "reference": "নিকি",
+    "hypothesis": "নেকি",
+    "count": 59,
+    "cls": "other"
+   },
+   {
+    "roman": "asa",
+    "reference": "আছা",
+    "hypothesis": "আছে",
+    "count": 59,
+    "cls": "other"
+   },
+   {
+    "roman": "o",
+    "reference": "ওঁ",
+    "hypothesis": "ও",
+    "count": 57,
+    "cls": "other"
+   },
+   {
+    "roman": "gol",
+    "reference": "গল",
+    "hypothesis": "গ'ল",
+    "count": 54,
+    "cls": "apostrophe (হল/হ'ল)"
+   },
+   {
+    "roman": "or",
+    "reference": "ৰ",
+    "hypothesis": "অ'ৰ",
+    "count": 52,
+    "cls": "other"
+   },
+   {
+    "roman": "e",
+    "reference": "য়ে",
+    "hypothesis": "এ",
+    "count": 51,
+    "cls": "other"
+   },
+   {
+    "roman": "o",
+    "reference": "অ",
+    "hypothesis": "ও",
+    "count": 48,
+    "cls": "other"
+   },
+   {
+    "roman": "na",
+    "reference": "নে",
+    "hypothesis": "না",
+    "count": 48,
+    "cls": "other"
+   }
+  ],
+  "class_share": {
+   "other": 0.6180990899898888,
+   "latin_kept_vs_transliterated": 0.26061678463094035,
+   "apostrophe (হল/হ'ল)": 0.0634984833164813,
+   "vowel_length (ি/ী, ু/ূ)": 0.031294236602628915,
+   "to (টো/তো)": 0.025530839231547017,
+   "ya_nukta (য়/য, ড়/ড, ঢ়/ঢ)": 0.0009605662285136501
+  },
+  "hypothesis_attested_as_training_reading_share": 0.7710819009100102
+ },
+ "runtime_s": 344.10229206085205
+}

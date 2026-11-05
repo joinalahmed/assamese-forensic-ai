@@ -1,0 +1,15 @@
+NFC-normalised native side
+NODEV: training on the 80% split minus its first 2,000 (dev) sentences
+57372 Roman types → 96737 weighted training pairs
+epoch 1/8 loss 2.028  (673s)
+epoch 2/8 loss 0.997  (1126s)
+epoch 3/8 loss 0.909  (1489s)
+epoch 4/8 loss 0.854  (1855s)
+epoch 5/8 loss 0.808  (2225s)
+epoch 6/8 loss 0.770  (2598s)
+epoch 7/8 loss 0.742  (2944s)
+epoch 8/8 loss 0.727  (3312s)
+unseen: {'unseen_tokens': 9588, 'neural_unseen_acc': 0.45202336253650394, 'copy_unseen_acc': 0.1571756362119316}
+viterbi+neural lambda=0.2: {'token_acc': 0.8448361561802171, 'in_vocab_acc': 0.8721936024919132, 'unseen_acc': 0.4875886524822695, 'sentence_acc': 0.2701649672552433, 'lookup_token_acc_same_split': 0.8027568197161574}
+viterbi+neural lambda=0.4: {'token_acc': 0.8438865519722835, 'in_vocab_acc': 0.8715706241763508, 'unseen_acc': 0.48237380058406343, 'sentence_acc': 0.2675951255906491, 'lookup_token_acc_same_split': 0.8027568197161574}
+NEURALDONE 0
